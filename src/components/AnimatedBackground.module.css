@@ -1,0 +1,30 @@
+.background {
+  position: fixed;
+  inset: 0;
+  background: #160416;
+  overflow: hidden;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.orbOne,
+.orbTwo {
+  position: absolute;
+  width: 720px;
+  height: 720px;
+  border-radius: 9999px;
+  background: #430eb5;
+  filter: blur(394px);
+  opacity: 0.9;
+  will-change: transform;
+}
+
+.orbOne {
+  left: -204px;
+  top: -292px;
+}
+
+.orbTwo {
+  left: 666px;
+  top: 390px;
+}
