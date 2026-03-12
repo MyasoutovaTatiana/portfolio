@@ -138,16 +138,8 @@ export default function MaterialSearchPage() {
 
             <div className={styles.imageBlock}>
               <img
-                src="/CorpSearch-Main.png"
+                src="/SearchMaterial-Main.png"
                 alt="Экран проекта"
-                className={styles.image}
-              />
-            </div>
-
-            <div className={styles.imageBlock}>
-              <img
-                src="/CorpSearch-Left.png"
-                alt="Экран проекта Поиск по материалам"
                 className={styles.image}
               />
             </div>
