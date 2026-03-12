@@ -8,7 +8,7 @@ export default function ProjectsSection() {
 
       <div className={styles.cards}>
         <ProjectCard
-          href="/projects/---"
+          href="/projects/ServiceDD"
           title="Сервис ДД"
           description="Внутренний сервис для юристов и финансистов, который позволяет анализировать и сопоставлять договорные документы с правилами заполнения"
           period="2025 - наст. вр"
@@ -25,7 +25,7 @@ export default function ProjectsSection() {
         />
 
         <ProjectCard
-          href="/projects/---"
+          href="/projects/DesignSystem"
           title="Consta"
           description="Дизайн-система компании «Газпром нефть»"
           period="2022 - наст. вр"
@@ -42,7 +42,7 @@ export default function ProjectsSection() {
         />
 
         <ProjectCard
-          href="/projects/---"
+          href="/projects/arc"
           title="profit architect"
           description="Телеграм бот для инвестиций в криптовалюты и заработка с рефрельной программы"
           period="2026"
@@ -72,7 +72,7 @@ export default function ProjectsSection() {
         />
 
         <ProjectCard
-          href="/projects/---"
+          href="/projects/corp-search"
           title="Единое поисковое окно компании"
           description="Внутренний сервис для всех сотрудников компании, который позволяет выполнять поиск по внутренним информационным ресурсам «Газпром нефти»"
           period="2022 - 2024"
