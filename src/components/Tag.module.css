@@ -1,0 +1,23 @@
+.tag {
+  display: inline-flex;
+  align-items: center;
+
+  height: 24px;
+  padding: 0 8px;
+
+  border-radius: 6px;
+
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 24px;
+
+  color: rgba(239, 235, 244, 0.4);
+}
+
+.work {
+  background: rgba(54, 4, 92, 0.6);
+}
+
+.device {
+  background: rgba(22, 2, 38, 0.6);
+}
