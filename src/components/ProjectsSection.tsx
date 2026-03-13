@@ -57,8 +57,8 @@ export default function ProjectsSection() {
         <ProjectCard
           href="/projects/material-search"
           title="Поиск по материалам"
-          description="Внутренний сервис для закупщиков, который позволяет находить материалы и оборудование в корпоративном справочнике"
-          period="2023 - 2025"
+          description="Рост пользователей на 31%, рост поисковых запросов на 116%, рост использования табличного поиска в 12 раз"
+          period="2022 - 2025"
           imageAlt="Поиск по материалами"
           tags={[
             { label: "GPN", variant: "work" },

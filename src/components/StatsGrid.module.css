@@ -1,0 +1,45 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+
+  padding: 8px;
+
+  background: rgba(206, 186, 251, 0.2);
+  backdrop-filter: blur(4px);
+  border: 1px solid #210f49;
+  border-radius: 8px;
+
+  text-align: center;
+}
+
+.value {
+  margin: 0;
+  color: #efebf4;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 150%;
+  letter-spacing: 0;
+}
+
+.label {
+  margin: 0;
+  color: rgba(239, 235, 244, 0.6);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 150%;
+  letter-spacing: 0;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
