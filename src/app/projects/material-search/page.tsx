@@ -345,6 +345,9 @@ export default function MaterialSearchPage() {
   );
 }
 
+// Список секций можно использовать для построения оглавления в сайдбаре.
+// Сейчас сайдбар отключен, поэтому массив оставлен для будущего развития страницы.
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const sections = [
   { id: "about", label: "О продукте" },
   { id: "problem", label: "Проблема" },
@@ -355,4 +358,4 @@ const sections = [
   { id: "ux-analogs", label: "Поиск аналогов" },
   { id: "ux-new-year-stats", label: "Новогодняя статистика" },
   { id: "result", label: "Результат" },
-] as const;
+];
