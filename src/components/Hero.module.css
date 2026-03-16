@@ -41,3 +41,29 @@
 .link:hover {
   text-decoration: underline;
 }
+
+@media (max-width: 1024px) {
+  .hero {
+    margin-top: 48px;
+    max-width: calc(100% - 40px);
+  }
+
+  .title {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    margin-top: 40px;
+    max-width: calc(100% - 32px);
+  }
+
+  .title {
+    font-size: 28px;
+  }
+
+  .description {
+    margin-top: 16px;
+  }
+}

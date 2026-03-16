@@ -20,3 +20,29 @@
   flex-direction: column;
   gap: 20px;
 }
+
+@media (max-width: 1024px) {
+  .section {
+    max-width: calc(100% - 40px);
+    margin-top: 48px;
+  }
+
+  .title {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    max-width: calc(100% - 32px);
+    margin-top: 40px;
+  }
+
+  .title {
+    font-size: 28px;
+  }
+
+  .cards {
+    gap: 16px;
+  }
+}

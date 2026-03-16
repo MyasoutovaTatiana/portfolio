@@ -69,17 +69,21 @@
 }
 
 .section {
-  margin: 0 0 48px;
+  margin: 0 0 60px;
 }
 
 .sectionTitle {
-  margin: 0 0 4px;
+  margin: 60px 0 4px;
   color: #efebf4;
   font-size: 24px;
   font-weight: 500;
   line-height: 150%;
   letter-spacing: 0;
   font-style: normal;
+}
+
+.section:first-of-type .sectionTitle {
+  margin-top: 20px;
 }
 
 .sectionText {
@@ -90,8 +94,25 @@
   letter-spacing: 0;
 }
 
+.blockLabel {
+  display: block;
+  margin-top: 12px;
+  font-weight: 500;
+}
+
+.blockSpacer {
+  display: block;
+  margin-top: 12px;
+}
+
+.noteText {
+  display: block;
+  margin-top: 12px;
+  color: rgba(239, 235, 244, 0.6);
+}
+
 .sectionText p {
-  margin: 0 0 16px;
+  margin: 0 0 4px;
 }
 
 .sectionText p:last-child {
@@ -99,18 +120,36 @@
 }
 
 .sectionText ul {
-  margin: 0 0 16px 0;
+  margin: 0;
   padding-left: 20px;
 }
 
 .sectionText p + ul {
-  margin-top: -8px;
+  margin-top: 0;
+}
+
+.sectionText li {
+  margin-bottom: 4px;
+}
+
+.sectionText li:last-child {
+  margin-bottom: 0;
 }
 
 .imageBlock {
-  margin: 0 0 20px;
+  margin: 8px auto 20px;
+  max-width: 672px;
   border-radius: 12px;
   overflow: hidden;
+}
+
+.imageLabel {
+  margin: 20px auto 0;
+  max-width: 672px;
+  color: rgba(239, 235, 244, 0.6);
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 150%;
 }
 
 .image {
@@ -181,4 +220,68 @@
   .sidebar {
     display: none;
   }
+}
+
+@media (max-width: 1024px) {
+  .page {
+    padding: 100px 0 72px;
+  }
+
+  .layout {
+    max-width: calc(100% - 40px);
+    gap: 32px;
+  }
+
+  .title {
+    font-size: 32px;
+  }
+
+  .sectionTitle {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 768px) {
+  .page {
+    padding: 80px 0 60px;
+  }
+
+  .layout {
+    max-width: calc(100% - 32px);
+    gap: 24px;
+  }
+
+  .breadcrumbs {
+    gap: 6px;
+  }
+
+  .breadcrumbMuted,
+  .breadcrumbCurrent,
+  .breadcrumbSeparator {
+    font-size: 13px;
+  }
+
+  .title {
+    font-size: 28px;
+  }
+
+  .section {
+    margin-bottom: 32px;
+  }
+
+  .sectionTitle {
+    font-size: 20px;
+  }
+
+  .sectionText {
+    font-size: 15px;
+  }
+
+  .imageBlock {
+    margin-bottom: 16px;
+  }
+}
+
+.statsWrapper {
+  margin-bottom: 48px;
 }
