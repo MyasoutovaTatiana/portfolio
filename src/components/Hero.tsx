@@ -14,7 +14,7 @@ export default function Hero() {
         <a
           href="https://consta.design/"
           target="_blank"
-          rel="noreferrer"
+          rel="noopener noreferrer"
           className={styles.link}
         >
           Consta

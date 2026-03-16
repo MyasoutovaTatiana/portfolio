@@ -1,45 +1,28 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import Link from "next/link";
 import styles from "./page.module.css";
 import AnimatedBackground from "../../../components/AnimatedBackground";
 import StatsGrid from "../../../components/StatsGrid";
+import ImageLightbox from "../../../components/ImageLightbox";
 
 export default function MaterialSearchPage() {
-  const [active, setActive] = useState<string>("about");
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActive(entry.target.id);
-          }
-        });
-      },
-      {
-        rootMargin: "-30% 0px -60% 0px",
-        threshold: 0,
-      },
-    );
-
-    sections.forEach((section) => {
-      const el = document.getElementById(section.id);
-      if (el) observer.observe(el);
-    });
-    return () => observer.disconnect();
-  }, []);
-
   return (
     <>
       <AnimatedBackground />
-      <main className={styles.page}>
+      <main id="main-content" className={styles.page}>
         <div className={styles.layout}>
           <div className={styles.content}>
             <nav className={styles.breadcrumbs}>
-              <a href="/" className={styles.breadcrumbMuted}>
+              <Link href="/" className={styles.breadcrumbMuted}>
                 Главная
-              </a>
-              <span className={styles.breadcrumbSeparator}>›</span>
+              </Link>
+              <span
+                className={styles.breadcrumbSeparator}
+                aria-hidden="true"
+              >
+                ›
+              </span>
               <span className={styles.breadcrumbCurrent}>
                 Поиск по материалам
               </span>
@@ -167,7 +150,7 @@ export default function MaterialSearchPage() {
               </div>
             </section>
 
-            <section id="changes" className={styles.section}>
+            <section id="ux-redesign" className={styles.section}>
               <h2 className={styles.sectionTitle}>
                 UX-кейс 1 – Редизайн системы и подключение дизайн-системы
               </h2>
@@ -207,22 +190,20 @@ export default function MaterialSearchPage() {
             </section>
 
             <div className={styles.imageBlock}>
-              <img
+              <ImageLightbox
                 src="/SearchMaterial-Main-DO.png"
-                alt="Экран проекта"
-                className={styles.image}
+                alt="старый интерфейс поиска по материалам до редизайна"
               />
             </div>
 
             <div className={styles.imageBlock}>
-              <img
+              <ImageLightbox
                 src="/SearchMaterial-Main.png"
-                alt="Экран проекта"
-                className={styles.image}
+                alt="обновленный интерфейс поиска по материалам после редизайна"
               />
             </div>
 
-            <section id="changes" className={styles.section}>
+            <section id="ux-table-search" className={styles.section}>
               <h2 className={styles.sectionTitle}>
                 UX-кейс 2 – Табличный поиск материалов{" "}
               </h2>
@@ -250,22 +231,20 @@ export default function MaterialSearchPage() {
             </section>
 
             <div className={styles.imageBlock}>
-              <img
+              <ImageLightbox
                 src="/SearchMaterial-Main-DO-TS.png"
-                alt="Экран проекта"
-                className={styles.image}
+                alt="старый интерфейс табличного поиска материалов"
               />
             </div>
 
             <div className={styles.imageBlock}>
-              <img
+              <ImageLightbox
                 src="/SearchMaterial-Main-TS.png"
-                alt="Экран проекта"
-                className={styles.image}
+                alt="обновленный интерфейс табличного поиска материалов"
               />
             </div>
 
-            <section id="changes" className={styles.section}>
+            <section id="ux-analogs" className={styles.section}>
               <h2 className={styles.sectionTitle}>
                 UX-кейс 3 – Поиск аналогов и сравнение материалов{" "}
               </h2>
@@ -290,14 +269,13 @@ export default function MaterialSearchPage() {
             </section>
 
             <div className={styles.imageBlock}>
-              <img
+              <ImageLightbox
                 src="/SearchMaterial-Main-analogy.png"
-                alt="Экран проекта"
-                className={styles.image}
+                alt="страница аналогов и сравнения материалов"
               />
             </div>
 
-            <section id="changes" className={styles.section}>
+            <section id="ux-new-year-stats" className={styles.section}>
               <h2 className={styles.sectionTitle}>
                 UX-кейс 4 – Новогодняя статистика{" "}
               </h2>
@@ -326,14 +304,13 @@ export default function MaterialSearchPage() {
             </section>
 
             <div className={styles.imageBlock}>
-              <img
+              <ImageLightbox
                 src="/SearchMaterial-Main-NG.png"
-                alt="Экран проекта"
-                className={styles.image}
+                alt="новогодний экран статистики пользователя в сервисе"
               />
             </div>
 
-            <section id="changes" className={styles.section}>
+            <section id="result" className={styles.section}>
               <h2 className={styles.sectionTitle}>Результат </h2>
               <div className={styles.sectionText}>
                 <p>Рост пользователей</p>
@@ -373,6 +350,9 @@ const sections = [
   { id: "problem", label: "Проблема" },
   { id: "goal", label: "Цель" },
   { id: "role", label: "Моя роль" },
-  { id: "changes", label: "Ключевые изменения" },
+  { id: "ux-redesign", label: "Редизайн и дизайн-система" },
+  { id: "ux-table-search", label: "Табличный поиск" },
+  { id: "ux-analogs", label: "Поиск аналогов" },
+  { id: "ux-new-year-stats", label: "Новогодняя статистика" },
   { id: "result", label: "Результат" },
-];
+] as const;

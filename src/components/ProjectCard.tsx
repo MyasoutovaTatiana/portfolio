@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import styles from "./ProjectCard.module.css";
 import Tag, { type TagVariant } from "./Tag";
@@ -41,26 +42,33 @@ export default function ProjectCard({
       <article className={styles.card}>
         <div className={styles.imageWrap}>
           {hoverImages?.left && (
-            <img
+            <Image
               src={hoverImages.left}
               alt=""
               aria-hidden="true"
               className={`${styles.image} ${styles.sideImage} ${styles.leftImage}`}
+              width={1440}
+              height={900}
             />
           )}
 
-          <img
+          <Image
             src={mainImage}
             alt={imageAlt}
             className={`${styles.image} ${styles.mainImage}`}
+            width={1440}
+            height={900}
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 720px"
           />
 
           {hoverImages?.right && (
-            <img
+            <Image
               src={hoverImages.right}
               alt=""
               aria-hidden="true"
               className={`${styles.image} ${styles.sideImage} ${styles.rightImage}`}
+              width={1440}
+              height={900}
             />
           )}
         </div>

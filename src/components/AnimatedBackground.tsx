@@ -1,14 +1,21 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import styles from "./AnimatedBackground.module.css";
 
 export default function AnimatedBackground() {
   const [scrollY, setScrollY] = useState(0);
+  const ticking = useRef(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrollY(window.scrollY);
+      if (!ticking.current) {
+        ticking.current = true;
+        window.requestAnimationFrame(() => {
+          setScrollY(window.scrollY);
+          ticking.current = false;
+        });
+      }
     };
 
     handleScroll();
