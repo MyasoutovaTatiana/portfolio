@@ -1,5 +1,3 @@
-"use client";
-
 import Link from "next/link";
 import styles from "./page.module.css";
 import AnimatedBackground from "../../../components/AnimatedBackground";
@@ -299,7 +297,7 @@ export default function MaterialSearchPage() {
                   <br />
                   <br />
                   <span className={styles.noteText}>
-                    Экран ежегодно открывают более 300 пользователей.
+                    Экран ежегодно открывают ~60 пользователей.
                   </span>
                 </p>
               </div>
@@ -313,30 +311,16 @@ export default function MaterialSearchPage() {
               <h2 className={styles.sectionTitle}>Результат </h2>
               <div className={styles.sectionText}>
                 <p>
-                  <span className={styles.blockLabel}>Рост пользователей:</span>
-                  • 4094 пользователей в 2023
+                  – Количество пользователей выросло с 4094 до 5385 (+31%)
                   <br />
-                  • 4897 пользователей в 2024
+                  – Поисковая активность увеличилась более чем в 2 раза (с 1471
+                  до 3175 запросов в день)
                   <br />
-                  • 5385 пользователей в 2025
-                  <span className={styles.blockLabel}>
-                    Рост поисковой активности:
-                  </span>
-                  • 1471 поисковый запрос в день в 2023
+                  – Пользователи стали чаще использовать систему в ежедневной
+                  работе
                   <br />
-                  • 2765 в 2024
-                  <br />
-                  • 3175 в 2025
-                  <span className={styles.blockLabel}>
-                    Рост использования табличного поиска:
-                  </span>
-                  • 2 запроса в день в 2023
-                  <br />
-                  • 8 в 2024
-                  <br />
-                  • 19 в 2025
-                  <br />
-                  • 25,5 в феврале 2026
+                  – Запустила и развила новый сценарий — табличный поиск: его
+                  использование выросло в 12 раз
                 </p>
               </div>
             </section>
