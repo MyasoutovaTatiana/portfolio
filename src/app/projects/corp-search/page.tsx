@@ -3,6 +3,7 @@
 import Link from "next/link";
 import styles from "./page.module.css";
 import AnimatedBackground from "../../../components/AnimatedBackground";
+import StatsGrid from "../../../components/StatsGrid";
 
 function ImageSlot({ label, hint }: { label: string; hint?: string }) {
   return (
@@ -61,6 +62,25 @@ export default function CorpSearchPage() {
               </div>
             </section>
 
+            <div className={styles.statsWrapper}>
+              <StatsGrid
+                items={[
+                  {
+                    value: "128K",
+                    label: "уникальных пользователей в месяц",
+                  },
+                  {
+                    value: "1.5M",
+                    label: "поисковых запросов в месяц",
+                  },
+                  {
+                    value: "~42K",
+                    label: "входов ежедневно",
+                  },
+                ]}
+              />
+            </div>
+
             <section id="problem" className={styles.section}>
               <h2 className={styles.sectionTitle}>Проблема</h2>
               <div className={styles.sectionText}>
@@ -83,6 +103,24 @@ export default function CorpSearchPage() {
                 label="Интерфейс до редизайна"
                 hint="public/corp-search-before.png"
               />
+            </section>
+
+            <section id="role" className={styles.section}>
+              <h2 className={styles.sectionTitle}>Моя роль</h2>
+              <div className={styles.sectionText}>
+                <p>
+                  <span className={styles.blockLabel}>Моя работа включала:</span>
+                  — проектирование UX/UI решений
+                  <br />
+                  — создание макетов и прототипов
+                  <br />
+                  — участие в юзабилити-исследованиях
+                  <br />
+                  — тестирование решений
+                  <br />
+                  — работу с аналитиками, разработчиками и исследователями
+                </p>
+              </div>
             </section>
 
             <section id="research" className={styles.section}>
@@ -229,36 +267,37 @@ export default function CorpSearchPage() {
               />
             </section>
 
-            <section id="scenario" className={styles.section}>
-              <h2 className={styles.sectionTitle}>Сценарий использования</h2>
+            <section id="metrics" className={styles.section}>
+              <h2 className={styles.sectionTitle}>Метрики</h2>
               <div className={styles.sectionText}>
                 <p>
-                  Пользователь вводит запрос → получает список результатов →
-                  при необходимости уточняет выдачу через фильтры → переходит к
-                  нужному документу или сотруднику.
+                  Редизайн корпоративного поиска позволил упростить сценарии
+                  работы с системой и повысить эффективность поиска информации.
                 </p>
-              </div>
-              <ImageSlot
-                label="Сценарий: поиск и фильтрация"
-                hint="public/corp-search-scenario.png"
-              />
-            </section>
-
-            <section id="role" className={styles.section}>
-              <h2 className={styles.sectionTitle}>Моя роль</h2>
-              <div className={styles.sectionText}>
-                <p>
-                  <span className={styles.blockLabel}>Моя работа включала:</span>
-                  — проектирование UX/UI решений
-                  <br />
-                  — создание макетов и прототипов
-                  <br />
-                  — участие в юзабилити-исследованиях
-                  <br />
-                  — тестирование решений
-                  <br />
-                  — работу с аналитиками, разработчиками и исследователями
-                </p>
+                <ul>
+                  <li>
+                    <strong>Время нахождения информации</strong> сократилось в
+                    среднем на 55%: сотрудники — на 30%, сервисы — на 64%,
+                    документы — на 68%.
+                  </li>
+                  <li>
+                    <strong>Пользователи стали быстрее осваивать систему</strong>:
+                    удобство использования — 4.3 / 5.
+                  </li>
+                  <li>
+                    <strong>Повысилось доверие к результатам поиска</strong>:
+                    оценка качества — 4.9 / 5.
+                  </li>
+                  <li>
+                    <strong>Продукт активно используется внутри компании</strong>:
+                    128K уникальных пользователей в месяц, 1.5M поисковых
+                    запросов в месяц, ~42K входов ежедневно.
+                  </li>
+                  <li>
+                    <strong>Стабильная пользовательская база</strong>: ретеншн —
+                    97%.
+                  </li>
+                </ul>
               </div>
             </section>
           </div>
