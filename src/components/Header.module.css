@@ -21,7 +21,7 @@
   border-radius: 12px;
 
   width: 100%;
-  max-width: 900px;
+  max-width: 1024px; /* --bp-lg */
 }
 
 .name {
@@ -49,13 +49,13 @@
   opacity: 1;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1024px) /* --bp-lg */ {
   .header {
     padding: 8px 12px;
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 768px) /* --bp-md */ {
   .wrapper {
     top: 16px;
   }

@@ -6,6 +6,8 @@ export type Project = {
   period: string;
   imageAlt: string;
   imageSrc?: string;
+  /** Показывать карточку как «в разработке»: заглушка, без перехода в кейс */
+  inDevelopment?: boolean;
   hoverImages?: {
     main: string;
     left?: string;
@@ -43,6 +45,7 @@ export const projects: Project[] = [
     description: "Дизайн-система компании «Газпром нефть»",
     period: "2022 - наст. вр",
     imageAlt: "Consta",
+    inDevelopment: true,
     hoverImages: {
       main: "/DesignSystem-Main.png",
       left: "/DesignSystem-Left.png",
@@ -62,6 +65,7 @@ export const projects: Project[] = [
     period: "2026",
     imageAlt: "profit architect",
     imageSrc: "/Arc.png",
+    inDevelopment: true,
     tags: [
       { label: "FREELANCE", variant: "work" },
       { label: "MOB", variant: "device" },

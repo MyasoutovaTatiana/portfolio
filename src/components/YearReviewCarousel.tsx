@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useCallback, useEffect, useRef, useState } from "react";
+import { BP_MD, BP_XL } from "@/styles/breakpoints";
 import styles from "./YearReviewCarousel.module.css";
 
 type CarouselImage = {
@@ -110,7 +111,7 @@ export default function YearReviewCarousel() {
             className={styles.image}
             width={672}
             height={424}
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 672px, 672px"
+            sizes={`(max-width: ${BP_MD}px) 100vw, (max-width: ${BP_XL}px) 672px, 672px`}
           />
         </button>
 
@@ -180,7 +181,7 @@ export default function YearReviewCarousel() {
               className={styles.overlayImage}
               width={1200}
               height={800}
-              sizes="(max-width: 768px) 100vw, 1200px"
+              sizes={`(max-width: ${BP_MD}px) 100vw, ${BP_XL}px`}
             />
 
             <button

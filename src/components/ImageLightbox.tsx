@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
+import { BP_MD, BP_XL } from "@/styles/breakpoints";
 import styles from "./ImageLightbox.module.css";
 
 const DISPLAY_WIDTH = 672;
@@ -79,7 +80,7 @@ export default function ImageLightbox({ src, alt }: Props) {
           className={styles.image}
           width={DISPLAY_WIDTH}
           height={DISPLAY_HEIGHT}
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 672px, 672px"
+          sizes={`(max-width: ${BP_MD}px) 100vw, (max-width: ${BP_XL}px) 672px, 672px`}
         />
       </button>
 

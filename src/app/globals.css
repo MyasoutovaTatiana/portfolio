@@ -1,3 +1,12 @@
+/* Breakpoints: use these px values in @media (var() not supported in media queries in all browsers). */
+:root {
+  --bp-sm: 480px;
+  --bp-md: 768px;
+  --bp-lg: 1024px;
+  --bp-xl: 1200px;
+  --bp-2xl: 1440px;
+}
+
 html,
 body {
   margin: 0;

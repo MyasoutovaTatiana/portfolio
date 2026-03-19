@@ -37,6 +37,7 @@
   width: 100%;
   aspect-ratio: 672 / 424;
   height: auto;
+  object-fit: contain;
   border-radius: 12px;
   cursor: zoom-in;
   display: block;

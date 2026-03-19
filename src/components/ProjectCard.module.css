@@ -15,6 +15,72 @@
   color: inherit;
 }
 
+.cardLink[data-wip] {
+  cursor: default;
+}
+
+.cardWip .imageWrap {
+  transition: filter 220ms ease, opacity 220ms ease;
+}
+
+.cardWip:hover .imageWrap {
+  filter: grayscale(0.6);
+  opacity: 0.85;
+}
+
+.cardWip:hover .image {
+  top: 0;
+}
+
+.cardWip:hover .mainImage {
+  transform: translateX(-50%) scale(1);
+}
+
+.cardWip:hover .leftImage,
+.cardWip:hover .rightImage {
+  opacity: 0;
+  transform: translateX(-50%) translateX(0) rotate(0deg);
+}
+
+.cardWip:hover .description {
+  opacity: 0;
+  max-height: 0;
+  transform: translateY(8px);
+}
+
+.wipOverlay {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(33, 15, 73, 0.6);
+  backdrop-filter: blur(8px);
+  border-radius: 12px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 220ms ease;
+}
+
+.cardWip:hover .wipOverlay {
+  opacity: 1;
+}
+
+.wipBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  background: rgba(239, 235, 244, 0.12);
+  border: 1px solid rgba(239, 235, 244, 0.2);
+  border-radius: 12px;
+  color: rgba(239, 235, 244, 0.9);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
 .imageWrap {
   position: relative;
   width: 100%;
@@ -31,7 +97,7 @@
   top: 0;
 
   width: 100%;
-  height: auto;
+  height: 100%;
 
   display: block;
   object-fit: cover;
@@ -90,9 +156,9 @@
   z-index: 10;
 
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: flex-start;
-  gap: 12px;
+  gap: 8px;
 
   padding: 20px;
 
@@ -106,20 +172,19 @@
   transition: min-height 320ms ease;
 }
 
-.leftSide {
+.titleRow {
   display: flex;
-  flex-direction: column;
-  gap: 8px;
-  min-width: 0;
+  justify-content: space-between;
   align-items: flex-start;
-}
-
-.rightSide {
-  flex-shrink: 0;
+  gap: 12px;
+  flex-wrap: wrap;
+  width: 100%;
+  min-width: 0;
 }
 
 .title {
   margin: 0;
+  min-width: 0;
   color: #efebf4;
   font-size: 20px;
   font-weight: 600;
@@ -162,6 +227,7 @@
 
 .period {
   margin: 0;
+  flex-shrink: 0;
   color: rgba(239, 235, 244, 0.4);
   font-size: 14px;
   font-weight: 400;
@@ -170,9 +236,38 @@
   white-space: nowrap;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1024px) /* --bp-lg */ {
   .card {
     height: 450px;
+  }
+
+  .card:hover .image {
+    top: 0;
+  }
+
+  .card:hover .mainImage {
+    transform: translateX(-50%);
+  }
+
+  .card:hover .leftImage,
+  .card:hover .rightImage {
+    opacity: 0;
+    transform: translateX(-50%) translateX(0) rotate(0deg);
+  }
+
+  .card:hover .description {
+    opacity: 1;
+    max-height: 96px;
+    transform: none;
+  }
+
+  .cardWip:hover .imageWrap {
+    filter: grayscale(0.6);
+    opacity: 0.85;
+  }
+
+  .cardWip:hover .wipOverlay {
+    opacity: 1;
   }
 
   .imageWrap {
@@ -181,17 +276,67 @@
 
   .info {
     padding: 16px;
+    min-height: 0;
+    overflow: visible;
+  }
+
+  .titleRow {
+    min-width: 0;
   }
 
   .description {
+    opacity: 1;
     max-height: 96px;
+    transform: none;
+    visibility: visible;
+  }
+
+  .cardWip .imageWrap {
+    filter: grayscale(0.6);
+    opacity: 0.85;
+  }
+
+  .cardWip .wipOverlay {
+    opacity: 1;
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 768px) /* --bp-md */ {
   .card {
     height: auto;
     min-height: 380px;
+  }
+
+  .card:hover .image {
+    top: 0;
+  }
+
+  .card:hover .mainImage {
+    transform: translateX(-50%);
+  }
+
+  .card:hover .description {
+    opacity: 1;
+    max-height: none;
+    transform: none;
+  }
+
+  .cardWip:hover .imageWrap {
+    filter: grayscale(0.6);
+    opacity: 0.85;
+  }
+
+  .cardWip:hover .wipOverlay {
+    opacity: 1;
+  }
+
+  .cardWip .imageWrap {
+    filter: grayscale(0.6);
+    opacity: 0.85;
+  }
+
+  .cardWip .wipOverlay {
+    opacity: 1;
   }
 
   .imageWrap {
@@ -200,15 +345,12 @@
   }
 
   .info {
-    position: static;
+    position: relative;
+    z-index: 10;
     margin-top: 16px;
     flex-direction: column;
     align-items: flex-start;
     padding: 12px 16px;
-  }
-
-  .rightSide {
-    align-self: flex-end;
   }
 
   .title {

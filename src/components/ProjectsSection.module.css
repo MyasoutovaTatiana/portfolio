@@ -1,5 +1,5 @@
 .section {
-  width: 900px;
+  width: 1024px; /* --bp-lg */
   max-width: calc(100% - 48px);
   margin: 60px auto 0;
 }
@@ -21,7 +21,7 @@
   gap: 20px;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1024px) /* --bp-lg */ {
   .section {
     max-width: calc(100% - 40px);
     margin-top: 48px;
@@ -32,7 +32,7 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 768px) /* --bp-md */ {
   .section {
     max-width: calc(100% - 32px);
     margin-top: 40px;

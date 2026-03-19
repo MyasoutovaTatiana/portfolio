@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { BP_MD, BP_XL } from "@/styles/breakpoints";
 import styles from "./ProjectCard.module.css";
 import Tag, { type TagVariant } from "./Tag";
 
@@ -23,6 +24,8 @@ type Props = {
   tags?: ProjectTag[];
   hoverImages?: HoverImages;
   href: string;
+  /** Карточка в разработке: заглушка, без перехода в кейс */
+  inDevelopment?: boolean;
 };
 
 export default function ProjectCard({
@@ -34,13 +37,12 @@ export default function ProjectCard({
   tags = [],
   hoverImages,
   href,
+  inDevelopment = false,
 }: Props) {
   const mainImage = hoverImages?.main ?? imageSrc ?? "";
-
-  return (
-    <Link href={href} className={styles.cardLink}>
-      <article className={styles.card}>
-        <div className={styles.imageWrap}>
+  const cardContent = (
+    <>
+      <div className={styles.imageWrap}>
           {hoverImages?.left && (
             <Image
               src={hoverImages.left}
@@ -58,7 +60,7 @@ export default function ProjectCard({
             className={`${styles.image} ${styles.mainImage}`}
             width={1440}
             height={900}
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 720px"
+            sizes={`(max-width: ${BP_MD}px) 100vw, (max-width: ${BP_XL}px) 80vw, 720px`}
           />
 
           {hoverImages?.right && (
@@ -74,28 +76,48 @@ export default function ProjectCard({
         </div>
 
         <div className={styles.info}>
-          <div className={styles.leftSide}>
+          <div className={styles.titleRow}>
             <h3 className={styles.title}>{title}</h3>
-
-            {tags.length > 0 && (
-              <div className={styles.tags}>
-                {tags.map((tag) => (
-                  <Tag
-                    key={`${tag.variant}-${tag.label}`}
-                    label={tag.label}
-                    variant={tag.variant}
-                  />
-                ))}
-              </div>
-            )}
-
-            <p className={styles.description}>{description}</p>
-          </div>
-
-          <div className={styles.rightSide}>
             <p className={styles.period}>{period}</p>
           </div>
+
+          {tags.length > 0 && (
+            <div className={styles.tags}>
+              {tags.map((tag) => (
+                <Tag
+                  key={`${tag.variant}-${tag.label}`}
+                  label={tag.label}
+                  variant={tag.variant}
+                />
+              ))}
+            </div>
+          )}
+
+          <p className={styles.description}>{description}</p>
         </div>
+
+      {inDevelopment && (
+        <div className={styles.wipOverlay} aria-hidden>
+          <span className={styles.wipBadge}>Описание проекта в разработке</span>
+        </div>
+      )}
+    </>
+  );
+
+  if (inDevelopment) {
+    return (
+      <div className={styles.cardLink} data-wip>
+        <article className={`${styles.card} ${styles.cardWip}`}>
+          {cardContent}
+        </article>
+      </div>
+    );
+  }
+
+  return (
+    <Link href={href} className={styles.cardLink}>
+      <article className={styles.card}>
+        {cardContent}
       </article>
     </Link>
   );

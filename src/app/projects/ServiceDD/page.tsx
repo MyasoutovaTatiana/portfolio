@@ -36,14 +36,12 @@ export default function ServiceDDPage() {
                 ›
               </span>
               <span className={styles.breadcrumbCurrent}>
-                ML-сервис проверки договорных документов
+                Сервис ДД
               </span>
             </nav>
 
             <header className={styles.hero}>
-              <h1 className={styles.title}>
-                ML-сервис проверки договорных документов
-              </h1>
+              <h1 className={styles.title}>Сервис ДД</h1>
               <p className={styles.period}>2025 — настоящее время</p>
             </header>
 

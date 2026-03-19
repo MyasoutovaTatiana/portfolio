@@ -1,5 +1,5 @@
 .hero {
-  width: 900px;
+  width: 1024px; /* --bp-lg */
   max-width: calc(100% - 48px);
   margin: 64px auto 0;
 }
@@ -42,7 +42,7 @@
   text-decoration: underline;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1024px) /* --bp-lg */ {
   .hero {
     margin-top: 48px;
     max-width: calc(100% - 40px);
@@ -53,7 +53,7 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 768px) /* --bp-md */ {
   .hero {
     margin-top: 40px;
     max-width: calc(100% - 32px);

@@ -19,6 +19,7 @@ export default function ProjectsSection() {
             imageAlt={project.imageAlt}
             tags={project.tags}
             hoverImages={project.hoverImages}
+            inDevelopment={project.inDevelopment}
           />
         ))}
       </div>
