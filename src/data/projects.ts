@@ -21,6 +21,20 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    slug: "admin-service",
+    href: "/projects/admin-service",
+    title: "Сервис администрирования",
+    description:
+      "Единая точка управления продуктами корпоративного поиска с унифицированными админскими сценариями",
+    period: "июль — сентябрь 2025",
+    imageAlt: "Сервис администрирования",
+    imageSrc: "/year-review-1.jpg",
+    tags: [
+      { label: "GPN", variant: "work" },
+      { label: "WEB", variant: "device" },
+    ],
+  },
+  {
     slug: "service-dd",
     href: "/projects/ServiceDD",
     title: "Сервис ДД",
