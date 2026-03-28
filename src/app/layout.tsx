@@ -20,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru">
-      <body className={inter.className}>
+      <body className={`${inter.className} ${inter.variable}`}>
         <a href="#main-content" className="skipLink">
           Перейти к основному содержимому
         </a>
