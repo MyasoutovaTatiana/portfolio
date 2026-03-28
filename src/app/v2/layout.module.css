@@ -1,0 +1,27 @@
+.shell {
+  --v2-bg: #f4f1ec;
+  --v2-surface: #ffffff;
+  --v2-text: #1a1423;
+  --v2-muted: rgba(26, 20, 35, 0.55);
+  --v2-faint: rgba(26, 20, 35, 0.35);
+  --v2-accent: #7c3aed;
+  --v2-border: rgba(26, 20, 35, 0.08);
+  --v2-radius-lg: 20px;
+  --v2-radius-md: 12px;
+  --v2-shadow: 0 24px 48px rgba(26, 20, 35, 0.06);
+
+  min-height: 100vh;
+  color: var(--v2-text);
+  background-color: var(--v2-bg);
+  background-image: radial-gradient(
+      ellipse 120% 80% at 100% -20%,
+      rgba(124, 58, 237, 0.08),
+      transparent 55%
+    ),
+    radial-gradient(
+      ellipse 100% 60% at 0% 100%,
+      rgba(26, 20, 35, 0.04),
+      transparent 50%
+    );
+  font-family: var(--font-v2-sans), var(--font-inter), system-ui, sans-serif;
+}

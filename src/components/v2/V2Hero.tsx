@@ -1,0 +1,27 @@
+import styles from "./V2Hero.module.css";
+
+export default function V2Hero() {
+  return (
+    <section className={styles.hero} aria-labelledby="v2-hero-title">
+      <p className={styles.eyebrow}>Продуктовый дизайн</p>
+      <h1 id="v2-hero-title" className={styles.title}>
+        Product Designer
+      </h1>
+      <p className={styles.meta}>B2E сервисы • Design Systems</p>
+      <p className={styles.description}>
+        Продуктовый дизайнер с 4-летним опытом проектирования внутренних
+        сервисов для сотрудников. Проектирую сложные интерфейсы и
+        пользовательские сценарии, а также участвую в развитии дизайн-системы{" "}
+        <a
+          href="https://consta.design/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={styles.link}
+        >
+          Consta
+        </a>
+        .
+      </p>
+    </section>
+  );
+}

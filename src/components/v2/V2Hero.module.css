@@ -1,0 +1,60 @@
+.hero {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 56px 24px 0;
+}
+
+.eyebrow {
+  margin: 0 0 12px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--v2-muted);
+}
+
+.title {
+  margin: 0;
+  font-size: clamp(2.25rem, 5vw, 3.5rem);
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  color: var(--v2-text);
+}
+
+.meta {
+  margin: 16px 0 0;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--v2-muted);
+}
+
+.description {
+  margin: 28px 0 0;
+  max-width: 38rem;
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--v2-text);
+}
+
+.link {
+  color: var(--v2-accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+
+.link:hover {
+  text-decoration-thickness: 2px;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding-top: 40px;
+  }
+
+  .description {
+    margin-top: 20px;
+    font-size: 15px;
+  }
+}

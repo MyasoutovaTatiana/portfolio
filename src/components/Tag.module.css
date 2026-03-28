@@ -21,3 +21,15 @@
 .device {
   background: rgba(22, 2, 38, 0.6);
 }
+
+.toneLight {
+  color: rgba(26, 20, 35, 0.55);
+}
+
+.toneLight.work {
+  background: rgba(154, 82, 245, 0.12);
+}
+
+.toneLight.device {
+  background: rgba(26, 20, 35, 0.06);
+}
