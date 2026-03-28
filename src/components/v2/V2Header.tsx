@@ -4,7 +4,7 @@ import styles from "./V2Header.module.css";
 export default function V2Header() {
   return (
     <header className={styles.wrapper}>
-      <div className={styles.inner}>
+      <div className={styles.header}>
         <Link href="/v2" className={styles.name}>
           Мясоутова Татьяна
         </Link>
@@ -29,7 +29,7 @@ export default function V2Header() {
           <a href="mailto:email@example.com" className={styles.link}>
             Email
           </a>
-          <Link href="/" className={styles.linkMuted}>
+          <Link href="/" className={styles.linkV1}>
             Версия сайта v1
           </Link>
         </nav>

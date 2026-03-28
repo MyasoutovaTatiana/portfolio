@@ -1,26 +1,30 @@
+import ProjectCard from "@/components/ProjectCard";
 import { projects } from "@/data/projects";
-import V2ProjectCard from "./V2ProjectCard";
 import styles from "./V2ProjectsSection.module.css";
 
 export default function V2ProjectsSection() {
   return (
     <section className={styles.section} aria-labelledby="v2-projects-title">
-      <div className={styles.head}>
-        <h2 id="v2-projects-title" className={styles.title}>
-          Проекты
-        </h2>
-        <p className={styles.subtitle}>
-          Выбранные кейсы: корпоративные сервисы и продуктовые интерфейсы
-        </p>
-      </div>
+      <h2 id="v2-projects-title" className={styles.title}>
+        Проекты
+      </h2>
 
-      <ul className={styles.list}>
+      <div className={styles.cards}>
         {projects.map((project) => (
-          <li key={project.slug} className={styles.item}>
-            <V2ProjectCard project={project} />
-          </li>
+          <ProjectCard
+            key={project.slug}
+            href={project.href}
+            title={project.title}
+            description={project.description}
+            period={project.period}
+            imageSrc={project.imageSrc}
+            imageAlt={project.imageAlt}
+            tags={project.tags}
+            hoverImages={project.hoverImages}
+            inDevelopment={project.inDevelopment}
+          />
         ))}
-      </ul>
+      </div>
     </section>
   );
 }

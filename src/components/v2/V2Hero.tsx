@@ -3,11 +3,12 @@ import styles from "./V2Hero.module.css";
 export default function V2Hero() {
   return (
     <section className={styles.hero} aria-labelledby="v2-hero-title">
-      <p className={styles.eyebrow}>Продуктовый дизайн</p>
       <h1 id="v2-hero-title" className={styles.title}>
         Product Designer
       </h1>
+
       <p className={styles.meta}>B2E сервисы • Design Systems</p>
+
       <p className={styles.description}>
         Продуктовый дизайнер с 4-летним опытом проектирования внутренних
         сервисов для сотрудников. Проектирую сложные интерфейсы и
@@ -20,7 +21,6 @@ export default function V2Hero() {
         >
           Consta
         </a>
-        .
       </p>
     </section>
   );

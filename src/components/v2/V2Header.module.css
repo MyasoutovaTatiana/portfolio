@@ -1,68 +1,96 @@
 .wrapper {
-  position: sticky;
-  top: 0;
-  z-index: 50;
-  border-bottom: 1px solid var(--v2-border);
-  background: color-mix(in srgb, var(--v2-bg) 88%, transparent);
-  backdrop-filter: blur(12px);
+  position: fixed;
+  top: 24px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  z-index: 100;
 }
 
-.inner {
-  max-width: 1120px;
-  margin: 0 auto;
-  padding: 16px 24px;
+.header {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  gap: 16px;
-  flex-wrap: wrap;
+  align-items: center;
+
+  padding: 8px 16px;
+
+  background: rgba(33, 15, 73, 0.35);
+  backdrop-filter: blur(12px);
+
+  border-radius: 12px;
+
+  width: 100%;
+  max-width: 1024px; /* --bp-lg */
 }
 
 .name {
-  font-size: 15px;
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  color: var(--v2-text);
+  color: #efebf4;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 150%;
+  letter-spacing: 0;
   text-decoration: none;
 }
 
 .name:hover {
-  color: var(--v2-accent);
+  opacity: 0.92;
 }
 
 .links {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 16px;
   flex-wrap: wrap;
 }
 
 .link {
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--v2-text);
+  color: #efebf4;
   text-decoration: none;
-  opacity: 0.85;
-  transition: opacity 0.2s ease, color 0.2s ease;
+  font-size: 14px;
+  opacity: 0.9;
+  transition: opacity 0.2s ease;
 }
 
 .link:hover {
   opacity: 1;
-  color: var(--v2-accent);
 }
 
-.linkMuted {
-  composes: link;
-  color: var(--v2-muted);
-  font-weight: 400;
+.linkV1 {
+  color: #efebf4;
+  text-decoration: none;
+  font-size: 14px;
+  opacity: 0.45;
+  transition: opacity 0.2s ease;
 }
 
-@media (max-width: 768px) {
-  .inner {
-    padding: 12px 16px;
+.linkV1:hover {
+  opacity: 0.85;
+}
+
+@media (max-width: 1024px) /* --bp-lg */ {
+  .header {
+    padding: 8px 12px;
+  }
+}
+
+@media (max-width: 768px) /* --bp-md */ {
+  .wrapper {
+    top: 16px;
+  }
+
+  .header {
+    padding: 8px 12px;
+    flex-wrap: wrap;
+    gap: 8px;
   }
 
   .links {
-    gap: 14px;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .name {
+    font-size: 13px;
   }
 }
