@@ -25,10 +25,10 @@ export const projects: Project[] = [
     href: "/projects/admin-service",
     title: "Сервис администрирования",
     description:
-      "Единая точка управления продуктами корпоративного поиска с унифицированными админскими сценариями",
+      "Единая точка управления продуктами команды корпоративного поиска",
     period: "июль — сентябрь 2025",
     imageAlt: "Сервис администрирования",
-    imageSrc: "/year-review-1.jpg",
+    imageSrc: "/the-administration-system.jpg",
     tags: [
       { label: "GPN", variant: "work" },
       { label: "WEB", variant: "device" },
@@ -78,7 +78,7 @@ export const projects: Project[] = [
       "Телеграм бот для инвестиций в криптовалюты и заработка с рефрельной программы",
     period: "2026",
     imageAlt: "profit architect",
-    imageSrc: "/Arc.png",
+    imageSrc: "/profit-architect.png",
     inDevelopment: true,
     tags: [
       { label: "FREELANCE", variant: "work" },

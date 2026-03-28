@@ -129,6 +129,35 @@
   line-height: 150%;
 }
 
+.section:first-of-type .imageLabel {
+  margin-top: 16px;
+  margin-left: 0;
+  margin-right: 0;
+  max-width: none;
+}
+
+.overviewImageWrap {
+  margin-top: 8px;
+  margin-left: 60px;
+  display: inline-block;
+  max-width: calc(100% - 60px);
+  border-radius: 6px;
+  border: 1px solid rgba(0, 65, 102, 0.2);
+  box-shadow:
+    0 4px 4px rgba(0, 32, 51, 0.04),
+    0 8px 24px rgba(0, 32, 51, 0.12);
+  overflow: hidden;
+  line-height: 0;
+}
+
+.overviewImage {
+  display: block;
+  height: 500px;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+}
+
 .imagePlaceholder {
   margin: 0;
   min-height: 260px;
@@ -214,5 +243,16 @@
   .imagePlaceholder {
     min-height: 200px;
     padding: 24px 16px;
+  }
+
+  .overviewImageWrap {
+    margin-left: 0;
+    max-width: 100%;
+  }
+
+  .overviewImage {
+    height: auto;
+    max-height: 500px;
+    width: 100%;
   }
 }

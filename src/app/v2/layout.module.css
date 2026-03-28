@@ -1,6 +1,5 @@
-/* Та же база, что и v1: тёмный фон задаёт AnimatedBackground на странице. */
+/* Светлая ветка v2: фон и текст задаёт страница (page.module.css). */
 .shell {
   min-height: 100vh;
   position: relative;
-  color: #efebf4;
 }

@@ -1,0 +1,24 @@
+.page {
+  min-height: 100vh;
+  background: #ffffff;
+  color: #002033;
+  padding: 32px 24px 80px;
+}
+
+.column {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+@media (max-width: 768px) {
+  .column {
+    gap: 48px;
+  }
+
+  .page {
+    padding: 24px 16px 64px;
+  }
+}

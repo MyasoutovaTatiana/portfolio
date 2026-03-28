@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import styles from "./page.module.css";
 import AnimatedBackground from "../../../components/AnimatedBackground";
@@ -53,10 +54,18 @@ export default function AdminServicePage() {
                   управления, хотя по сути админские сценарии дублировались.
                 </p>
               </div>
-              <ImageSlot
-                label="Общий вид сервиса администрирования"
-                hint="public/admin-service-overview.png"
-              />
+              <div className={styles.imageLabel}>Общий вид сервиса администрирования</div>
+              <div className={styles.overviewImageWrap}>
+                <Image
+                  src="/admin-service-overview.png"
+                  alt="Система администрирования: сетка сервисов и статусы узлов"
+                  width={1024}
+                  height={576}
+                  sizes="(max-width: 1024px) calc(100vw - 108px), 889px"
+                  className={styles.overviewImage}
+                  priority
+                />
+              </div>
             </section>
 
             <section className={styles.section}>

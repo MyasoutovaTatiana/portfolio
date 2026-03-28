@@ -1,0 +1,213 @@
+.section {
+  width: 100%;
+}
+
+.title {
+  margin: 0 0 20px;
+  color: #110033;
+  font-size: 36px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.row {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.row:last-child {
+  margin-bottom: 0;
+}
+
+.card {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 65, 102, 0.2);
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  flex-shrink: 0;
+  background: transparent;
+}
+
+.card:focus-visible {
+  outline: 2px solid #0078d2;
+  outline-offset: 3px;
+}
+
+.cardInner {
+  position: relative;
+  height: 100%;
+  padding: 23px 0 0 23px;
+  box-sizing: border-box;
+}
+
+.cardText {
+  padding-right: 23px;
+}
+
+.cardTitle {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.5;
+  color: #110033;
+}
+
+.cardTitleSm {
+  font-size: 16px;
+  white-space: normal;
+}
+
+.cardDescription {
+  margin: 8px 0 0;
+  width: 375px;
+  max-width: 100%;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: rgba(0, 32, 51, 0.6);
+}
+
+.imageWrap {
+  position: absolute;
+  left: 60px;
+  right: 0;
+  bottom: 0;
+  top: 141px;
+  pointer-events: none;
+  overflow: hidden;
+  border-radius: 6px 0 0 0;
+}
+
+/* Profit architect: 352×589, справа 14px и сверху 54px от краёв карточки (cardInner) */
+.imageWrapArc {
+  left: auto;
+  right: 14px;
+  top: 54px;
+  bottom: auto;
+  width: 352px;
+  height: 589px;
+  overflow: hidden;
+  border-radius: 0;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  border: none;
+  box-shadow:
+    0 4px 4px rgba(0, 32, 51, 0.04),
+    0 8px 24px rgba(0, 32, 51, 0.12);
+}
+
+.imageArc {
+  display: block;
+  width: 352px;
+  height: 589px;
+  object-fit: contain;
+  object-position: center top;
+  border: none;
+  box-shadow: none;
+}
+
+/* Row width presets: 380 + 20 + 500 = 900 */
+.narrow {
+  width: 380px;
+}
+
+.wide {
+  width: 500px;
+}
+
+.cardWip {
+  cursor: default;
+}
+
+.wipBadge {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  right: 16px;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 8px;
+  font-size: 13px;
+  color: rgba(0, 32, 51, 0.7);
+  text-align: center;
+  border: 1px solid rgba(0, 65, 102, 0.15);
+  z-index: 2;
+}
+
+@media (max-width: 920px) {
+  .row {
+    flex-direction: column;
+  }
+
+  .narrow,
+  .wide {
+    width: 100%;
+  }
+
+  .card {
+    height: auto;
+    min-height: 360px;
+  }
+
+  .cardInner {
+    padding: 23px 0 0 23px;
+  }
+
+  .cardText {
+    padding-right: 16px;
+  }
+
+  .imageWrap {
+    position: relative;
+    top: auto;
+    height: 220px;
+    margin-top: 32px;
+    padding: 0 16px 16px;
+    box-sizing: border-box;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    border-radius: 0;
+  }
+
+  .imageWrapArc {
+    position: relative;
+    top: auto;
+    right: auto;
+    width: min(352px, calc(100% - 37px));
+    height: auto;
+    margin-top: 24px;
+    margin-left: auto;
+    margin-right: 14px;
+    padding: 0;
+  }
+
+  .image {
+    border-radius: 6px;
+  }
+
+  .imageArc {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 352 / 589;
+  }
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 28px;
+  }
+}
