@@ -1,53 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import styles from "./page.module.css";
-
-function ImageSlot({
-  label,
-  hint,
-  imageSrc,
-  imageAlt,
-  imageWidth,
-  imageHeight,
-  hideLabel,
-}: {
-  label: string;
-  hint?: string;
-  imageSrc?: string;
-  imageAlt?: string;
-  imageWidth?: number;
-  imageHeight?: number;
-  hideLabel?: boolean;
-}) {
-  return (
-    <>
-      {hideLabel ? null : <div className={styles.imageLabel}>{label}</div>}
-      <div className={styles.imageBlock}>
-        <div
-          className={
-            imageSrc ? styles.imagePlaceholderWithImage : styles.imagePlaceholder
-          }
-        >
-          {imageSrc ? (
-            <Image
-              src={imageSrc}
-              alt={imageAlt ?? label}
-              width={imageWidth ?? 2680}
-              height={imageHeight ?? 1680}
-              sizes="(max-width: 768px) calc(100vw - 32px), 672px"
-              className={styles.projectImage}
-            />
-          ) : (
-            <>
-              <span>Место для скриншота</span>
-              {hint ? <kbd>{hint}</kbd> : null}
-            </>
-          )}
-        </div>
-      </div>
-    </>
-  );
-}
+import ProjectCaseImageSlot from "@/components/project-case/ProjectCaseImageSlot";
+import styles from "@/components/project-case/ProjectCasePage.module.css";
 
 export default function AdminServicePage() {
   return (
@@ -189,7 +143,7 @@ export default function AdminServicePage() {
                   даже если пользователь работает с разными сервисами.
                 </p>
               </div>
-              <ImageSlot
+              <ProjectCaseImageSlot
                 label="Результаты интервью с аналитиками"
                 imageSrc="/info.jpg"
               />
@@ -236,7 +190,7 @@ export default function AdminServicePage() {
                   масштабированию.
                 </p>
               </div>
-              <ImageSlot
+              <ProjectCaseImageSlot
                 label="Единый интерфейс и навигация по сущностям"
                 imageSrc="/design.jpg"
                 imageAlt="Единый интерфейс и навигация по сущностям"

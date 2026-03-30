@@ -3,7 +3,7 @@
   width: 100%;
   height: auto;
 
-  border-radius: 6px;
+  border-radius: 20px;
   background: linear-gradient(
     to bottom right,
     #a167ed 0%,
@@ -60,7 +60,7 @@
   justify-content: center;
   background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(8px);
-  border-radius: 6px;
+  border-radius: 20px;
   opacity: 0;
   pointer-events: none;
   transition: opacity 220ms ease;
@@ -89,7 +89,7 @@
   width: 100%;
   aspect-ratio: 8 / 5; /* 1440x900 */
   margin: 0;
-  border-radius: 6px;
+  border-radius: 20px;
   overflow: visible;
 }
 
@@ -105,7 +105,7 @@
   object-fit: cover;
   object-position: top center;
 
-  border-radius: 6px;
+  border-radius: 20px;
 
   transform: translateX(-50%);
   transition:
@@ -163,7 +163,7 @@
   background: rgba(240, 230, 254, 0.6);
   backdrop-filter: blur(20px);
   border: none;
-  border-radius: 6px;
+  border-radius: 20px;
 
   overflow: hidden;
 

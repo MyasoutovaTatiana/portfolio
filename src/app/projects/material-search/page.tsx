@@ -1,349 +1,335 @@
+"use client";
+
+import Image from "next/image";
 import Link from "next/link";
-import styles from "./page.module.css";
-import AnimatedBackground from "../../../components/AnimatedBackground";
+import ProjectCaseImageSlot from "@/components/project-case/ProjectCaseImageSlot";
+import styles from "@/components/project-case/ProjectCasePage.module.css";
 import StatsGrid from "../../../components/StatsGrid";
-import ImageLightbox from "../../../components/ImageLightbox";
 import YearReviewCarousel from "../../../components/YearReviewCarousel";
 
 export default function MaterialSearchPage() {
   return (
-    <>
-      <AnimatedBackground />
-      <main id="main-content" className={styles.page}>
-        <div className={styles.layout}>
-          <div className={styles.content}>
-            <nav className={styles.breadcrumbs}>
-              <Link href="/" className={styles.breadcrumbMuted}>
-                Главная
-              </Link>
-              <span
-                className={styles.breadcrumbSeparator}
-                aria-hidden="true"
-              >
-                ›
-              </span>
-              <span className={styles.breadcrumbCurrent}>
-                Поиск по материалам
-              </span>
-            </nav>
+    <main id="main-content" className={styles.page}>
+      <div className={styles.layout}>
+        <div className={styles.content}>
+          <nav className={styles.breadcrumbs}>
+            <Link href="/" className={styles.breadcrumbMuted}>
+              Главная
+            </Link>
+            <span className={styles.breadcrumbSeparator} aria-hidden="true">
+              ›
+            </span>
+            <span className={styles.breadcrumbCurrent}>
+              Поиск по материалам
+            </span>
+          </nav>
 
-            <header className={styles.hero}>
-              <h1 className={styles.title}>Поиск по материалам</h1>
-              <p className={styles.period}>2022 – 2025</p>
-            </header>
+          <header className={styles.hero}>
+            <h1 className={styles.title}>Поиск по материалам</h1>
+            <p className={styles.period}>B2E продукт · 2022 — 2025</p>
+          </header>
 
-            <section id="about" className={styles.section}>
-              <h2 className={styles.sectionTitle}>О продукте</h2>
-              <div className={styles.sectionText}>
-                <p>
-                  Внутренний сервис для работы с нормативно-справочной
-                  информацией предприятия.
-                  <span className={styles.blockLabel}>Сервис помогает сотрудникам:</span>
-                  • находить материалы в справочнике
-                  <br />
-                  • проверять наличие материалов на заводах
-                  <br />
-                  • подбирать аналоги
-                  <br />
-                  • работать с закупками и заявками
-                  <br />
-                  <span className={styles.blockLabel}>
-                    Основные пользователи системы:
-                  </span>
-                  • специалисты по МТО
-                  <br />
-                  • специалисты по закупкам
-                  <br />
-                  • консультанты по мастер-данным
-                </p>
-              </div>
-            </section>
-
-            <div className={styles.statsWrapper}>
-              <StatsGrid
-                items={[
-                  { value: "+31%", label: "рост пользователей с 2023 года" },
-                  {
-                    value: "+116%",
-                    label: "рост поисковых запросов в системе",
-                  },
-                  {
-                    value: "в 12 раз",
-                    label: "рост использования табличного поиска",
-                  },
-                ]}
+          <section className={styles.section}>
+            <h2 className={styles.sectionTitle}>О проекте</h2>
+            <div className={styles.sectionText}>
+              <p>
+                Внутренний сервис для работы с нормативно-справочной
+                информацией предприятия.
+              </p>
+              <p>Сервис помогает сотрудникам:</p>
+              <ul>
+                <li>находить материалы в справочнике</li>
+                <li>проверять наличие материалов на заводах</li>
+                <li>подбирать аналоги</li>
+                <li>работать с закупками и заявками</li>
+              </ul>
+              <p>Основные пользователи системы:</p>
+              <ul>
+                <li>специалисты по МТО</li>
+                <li>специалисты по закупкам</li>
+                <li>консультанты по мастер-данным</li>
+              </ul>
+            </div>
+            <div className={styles.imageLabel}>
+              Общий вид сервиса поиска по материалам
+            </div>
+            <div className={styles.overviewImageWrap}>
+              <Image
+                src="/Search-NSI.png"
+                alt="Интерфейс поиска по материалам: таблица результатов и фильтры"
+                width={1024}
+                height={576}
+                sizes="(max-width: 1024px) calc(100vw - 108px), 889px"
+                className={styles.projectImage}
+                priority
               />
             </div>
+          </section>
 
-            <section id="problem" className={styles.section}>
-              <h2 className={styles.sectionTitle}>Проблема</h2>
-              <div className={styles.sectionText}>
-                <p>
-                  До появления сервиса сотрудники работали со справочником
-                  материалов через 1С.
-                  <span className={styles.blockLabel}>
-                    Поиск в системе был неудобным:
-                  </span>
-                  • справочник содержал большое количество материалов
-                  <br />
-                  • поиск работал медленно и часто зависал
-                  <br />
-                  • пользователям приходилось тратить много времени на поиск
-                  нужных позиций
-                  <br />
-                  • было сложно проверять наличие материалов на разных
-                  предприятиях
-                  <span className={styles.blockSpacer} />
-                  В результате работа со справочником занимала значительную
-                  часть рабочего времени.
-                </p>
-              </div>
-            </section>
-
-            <section id="goal" className={styles.section}>
-              <h2 className={styles.sectionTitle}>Задача</h2>
-              <div className={styles.sectionText}>
-                <p>
-                  Создать удобный инструмент для работы с НСИ, который позволит:
-                  • быстро находить материалы
-                  <br />
-                  • проверять наличие на предприятиях
-                  <br />
-                  • подбирать аналоги
-                  <br />
-                  • сократить время работы со справочником
-                </p>
-              </div>
-            </section>
-
-            <section id="role" className={styles.section}>
-              <h2 className={styles.sectionTitle}>Роль и вклад</h2>
-              <div className={styles.sectionText}>
-                <p>
-                  Product Designer.
-                  <br />
-                  К моменту моего подключения уже существовал MVP интерфейс,
-                  который требовал переработки.
-                  <span className={styles.blockLabel}>Моя работа включала:</span>
-                  • редизайн интерфейса продукта
-                  <br />
-                  • интеграцию дизайн-системы
-                  <br />
-                  • проектирование новых функций
-                  <br />
-                  • создание макетов и интерактивных прототипов
-                  <br />
-                  • проведение UX-исследований
-                  <br />
-                  • работу с аналитиками и разработчиками
-                  <span className={styles.blockSpacer} />
-                  За время работы над продуктом я участвовала как в крупных
-                  задачах, так и в небольших улучшениях интерфейса.
-                </p>
-              </div>
-            </section>
-
-            <section id="ux-redesign" className={styles.section}>
-              <h2 className={styles.sectionTitle}>
-                UX-кейс 1 – Редизайн системы и подключение дизайн-системы
-              </h2>
-              <div className={styles.sectionText}>
-                <p>
-                  К моменту моего подключения интерфейс MVP уже существовал,
-                  однако система выглядела несогласовано и была перегружена.
-                  <span className={styles.blockLabel}>
-                    Основные проблемы интерфейса:
-                  </span>
-                  • разные элементы интерфейса использовались непоследовательно
-                  <br />
-                  • таблицы содержали большое количество столбцов
-                  <br />
-                  • пользователям было сложно ориентироваться в результатах
-                  поиска
-                  <br />
-                  <span className={styles.blockLabel}>
-                    Я провела редизайн интерфейса:
-                  </span>
-                  • интегрировала дизайн-систему
-                  <br />
-                  • переработала структуру таблиц
-                  <br />
-                  • определила ключевые столбцы
-                  <br />
-                  • изменила расположение фильтров
-                  <br />
-                  • упростила визуальную структуру интерфейса
-                  <span className={styles.blockSpacer} />
-                  В результате интерфейс стал более понятным и единообразным.
-                </p>
-              </div>
-
-              <div className={styles.imageLabel}>до</div>
-              <div className={styles.imageBlock}>
-                <ImageLightbox
-                  src="/SearchMaterial-Main-DO.png"
-                  alt="старый интерфейс поиска по материалам до редизайна"
-                />
-              </div>
-
-              <div className={styles.imageLabel}>после</div>
-              <div className={styles.imageBlock}>
-                <ImageLightbox
-                  src="/Search-NSI.png"
-                  alt="обновленный интерфейс поиска по материалам после редизайна"
-                />
-              </div>
-            </section>
-
-            <section id="ux-table-search" className={styles.section}>
-              <h2 className={styles.sectionTitle}>
-                UX-кейс 2 – Табличный поиск материалов{" "}
-              </h2>
-              <div className={styles.sectionText}>
-                <p>
-                  В работе специалистов часто возникает необходимость искать
-                  сразу большое количество материалов. Например, когда
-                  пользователь получает список позиций в Excel.
-                  <br />
-                  Для этого в системе появился табличный поиск. Пользователь
-                  загружает файл со списком материалов, а система автоматически
-                  выполняет поиск по каждой позиции.
-                  <span className={styles.blockLabel}>
-                    Я переработала интерфейс этой функции:
-                  </span>
-                  • упростила загрузку файлов
-                  <br />
-                  • улучшила отображение результатов
-                  <br />
-                  • сделала работу с найденными материалами более удобной
-                </p>
-              </div>
-
-              <div className={styles.imageLabel}>до</div>
-              <div className={styles.imageBlock}>
-                <ImageLightbox
-                  src="/SearchMaterial-Main-DO-TS.png"
-                  alt="старый интерфейс табличного поиска материалов"
-                />
-              </div>
-
-              <div className={styles.imageLabel}>после</div>
-              <div className={styles.imageBlock}>
-                <ImageLightbox
-                  src="/SearchMaterial-Main-TS.png"
-                  alt="обновленный интерфейс табличного поиска материалов"
-                />
-              </div>
-            </section>
-
-            <section id="ux-analogs" className={styles.section}>
-              <h2 className={styles.sectionTitle}>
-                UX-кейс 3 – Поиск аналогов и сравнение материалов{" "}
-              </h2>
-              <div className={styles.sectionText}>
-                <p>
-                  При работе со справочником пользователям важно понимать, можно
-                  ли заменить один материал другим.
-                  <span className={styles.blockLabel}>
-                    Я участвовала в проектировании:
-                  </span>
-                  • страницы аналогов
-                  <br />
-                  • страницы сравнения материалов
-                  <span className={styles.blockSpacer} />
-                  Эти функции помогают специалистам быстрее принимать решения о
-                  закупке или перераспределении материалов между подразделениями.
-                </p>
-              </div>
-
-              <div className={styles.imageBlock}>
-                <ImageLightbox
-                  src="/SearchMaterial-Main-analogy.png"
-                  alt="страница аналогов и сравнения материалов"
-                />
-              </div>
-            </section>
-
-            <section id="ux-new-year-stats" className={styles.section}>
-              <h2 className={styles.sectionTitle}>
-                UX-кейс 4 – Новогодняя статистика{" "}
-              </h2>
-              <div className={styles.sectionText}>
-                <p>
-                  В конце года в сервисе появляется интерактивный экран с
-                  персональными итогами работы пользователя.
-                  <br />
-                  <br />
-                  Формат напоминает «year in review»: пользователь листает
-                  карточки со своей статистикой за год. На них показывается,
-                  сколько поисковых запросов он выполнил, сколько страниц
-                  результатов просмотрел, как часто копировал код и
-                  наименование материалов, а также какие функции системы
-                  использовал чаще всего.
-                  <br />
-                  <br />
-                  Помимо числовых метрик в карточках появляются игровые элементы
-                  — достижения, «любимый класс» материалов и шуточные
-                  характеристики активности (например, «ваше животное — сова»).
-                  <br />
-                  <br />
-                  В финале пользователь может перейти к ежегодному опросу и
-                  оставить обратную связь о сервисе.
-                  <br />
-                  <br />
-                  Такой формат помогает показать пользователям их вклад в работу
-                  системы и добавляет немного эмоций в повседневный рабочий
-                  инструмент.
-                  <br />
-                  <br />
-                  <span className={styles.noteText}>
-                    Экран ежегодно открывают ~60 пользователей.
-                  </span>
-                </p>
-              </div>
-
-              <div className={styles.imageBlock}>
-                <YearReviewCarousel />
-              </div>
-            </section>
-
-            <section id="result" className={styles.section}>
-              <h2 className={styles.sectionTitle}>Результат </h2>
-              <div className={styles.sectionText}>
-                <p>
-                  – Количество пользователей выросло с 4094 до 5385 (+31%)
-                  <br />
-                  – Поисковая активность увеличилась более чем в 2 раза (с 1471
-                  до 3175 запросов в день)
-                  <br />
-                  – Пользователи стали чаще использовать систему в ежедневной
-                  работе
-                  <br />
-                  – Запустила и развила новый сценарий — табличный поиск: его
-                  использование выросло в 12 раз
-                </p>
-              </div>
-            </section>
+          <div className={styles.statsWrapper}>
+            <StatsGrid
+              items={[
+                { value: "+31%", label: "рост пользователей с 2023 года" },
+                {
+                  value: "+116%",
+                  label: "рост поисковых запросов в системе",
+                },
+                {
+                  value: "в 12 раз",
+                  label: "рост использования табличного поиска",
+                },
+              ]}
+            />
           </div>
 
-          {/* <aside className={styles.sidebar}>...</aside> */}
+          <section className={styles.section}>
+            <h2 className={styles.sectionTitle}>Проблема</h2>
+            <div className={styles.sectionText}>
+              <p>
+                До появления сервиса сотрудники работали со справочником
+                материалов через 1С.
+              </p>
+              <p>Поиск в системе был неудобным:</p>
+              <ul>
+                <li>справочник содержал большое количество материалов</li>
+                <li>поиск работал медленно и часто зависал</li>
+                <li>
+                  пользователям приходилось тратить много времени на поиск
+                  нужных позиций
+                </li>
+                <li>
+                  было сложно проверять наличие материалов на разных
+                  предприятиях
+                </li>
+              </ul>
+              <p>
+                В результате работа со справочником занимала значительную часть
+                рабочего времени.
+              </p>
+            </div>
+          </section>
+
+          <section className={styles.section}>
+            <h2 className={styles.sectionTitle}>Цель</h2>
+            <div className={styles.sectionText}>
+              <p>Создать удобный инструмент для работы с НСИ, который позволит:</p>
+              <ul>
+                <li>быстро находить материалы</li>
+                <li>проверять наличие на предприятиях</li>
+                <li>подбирать аналоги</li>
+                <li>сократить время работы со справочником</li>
+              </ul>
+            </div>
+          </section>
+
+          <section className={styles.section}>
+            <h2 className={styles.sectionTitle}>Моя роль</h2>
+            <div className={styles.sectionText}>
+              <p>Product Designer.</p>
+              <p>
+                К моменту моего подключения уже существовал MVP интерфейса,
+                который требовал переработки.
+              </p>
+              <p>Моя работа включала:</p>
+              <ul>
+                <li>редизайн интерфейса продукта</li>
+                <li>интеграцию дизайн-системы</li>
+                <li>проектирование новых функций</li>
+                <li>создание макетов и интерактивных прототипов</li>
+                <li>проведение UX-исследований</li>
+                <li>работу с аналитиками и разработчиками</li>
+              </ul>
+              <p>
+                За время работы над продуктом я участвовала как в крупных
+                задачах, так и в небольших улучшениях интерфейса.
+              </p>
+            </div>
+          </section>
+
+          <section className={styles.section}>
+            <h2 className={styles.sectionTitle}>Решение</h2>
+            <div className={styles.sectionText}>
+              <p>
+                Ниже — ключевые направления работы: от редизайна до новых
+                сценариев и сезонных активностей.
+              </p>
+            </div>
+
+            <h3 className={styles.subsectionTitle}>
+              Редизайн системы и подключение дизайн-системы
+            </h3>
+            <div className={styles.sectionText}>
+              <p>
+                К моменту моего подключения интерфейс MVP уже существовал,
+                однако система выглядела несогласованно и была перегружена.
+              </p>
+              <p>Основные проблемы интерфейса:</p>
+              <ul>
+                <li>
+                  разные элементы интерфейса использовались непоследовательно
+                </li>
+                <li>таблицы содержали большое количество столбцов</li>
+                <li>
+                  пользователям было сложно ориентироваться в результатах поиска
+                </li>
+              </ul>
+              <p>Я провела редизайн интерфейса:</p>
+              <ul>
+                <li>интегрировала дизайн-систему</li>
+                <li>переработала структуру таблиц</li>
+                <li>определила ключевые столбцы</li>
+                <li>изменила расположение фильтров</li>
+                <li>упростила визуальную структуру интерфейса</li>
+              </ul>
+              <p>
+                В результате интерфейс стал более понятным и единообразным.
+              </p>
+            </div>
+            <div className={styles.imageLabel}>до</div>
+            <ProjectCaseImageSlot
+              label="Интерфейс до редизайна"
+              hideLabel
+              imageSrc="/old.jpg"
+              imageAlt="Старый интерфейс поиска по материалам до редизайна"
+              imageWidth={2680}
+              imageHeight={1680}
+            />
+            <div className={styles.imageLabel}>после</div>
+            <ProjectCaseImageSlot
+              label="Интерфейс после редизайна"
+              hideLabel
+              imageSrc="/Search-NSI.png"
+              imageAlt="Обновлённый интерфейс поиска по материалам после редизайна"
+              imageWidth={1920}
+              imageHeight={1080}
+            />
+
+            <h3 className={styles.subsectionTitle}>
+              Табличный поиск материалов
+            </h3>
+            <div className={styles.sectionText}>
+              <p>
+                В работе специалистов часто возникает необходимость искать сразу
+                большое количество материалов — например, когда пользователь
+                получает список позиций в Excel.
+              </p>
+              <p>
+                Для этого в системе появился табличный поиск: пользователь
+                загружает файл со списком материалов, а система автоматически
+                выполняет поиск по каждой позиции.
+              </p>
+              <p>Я переработала интерфейс этой функции:</p>
+              <ul>
+                <li>упростила загрузку файлов</li>
+                <li>улучшила отображение результатов</li>
+                <li>сделала работу с найденными материалами удобнее</li>
+              </ul>
+            </div>
+            <div className={styles.imageLabel}>до</div>
+            <ProjectCaseImageSlot
+              label="Табличный поиск — до"
+              hideLabel
+              imageSrc="/SearchMaterial-Main-DO-TS.png"
+              imageAlt="Старый интерфейс табличного поиска материалов"
+              imageWidth={1920}
+              imageHeight={1080}
+            />
+            <div className={styles.imageLabel}>после</div>
+            <ProjectCaseImageSlot
+              label="Табличный поиск — после"
+              hideLabel
+              imageSrc="/SearchMaterial-Main-TS.png"
+              imageAlt="Обновлённый интерфейс табличного поиска материалов"
+              imageWidth={1920}
+              imageHeight={1080}
+            />
+
+            <h3 className={styles.subsectionTitle}>
+              Поиск аналогов и сравнение материалов
+            </h3>
+            <div className={styles.sectionText}>
+              <p>
+                При работе со справочником пользователям важно понимать, можно
+                ли заменить один материал другим.
+              </p>
+              <p>Я участвовала в проектировании:</p>
+              <ul>
+                <li>страницы аналогов</li>
+                <li>страницы сравнения материалов</li>
+              </ul>
+              <p>
+                Эти функции помогают специалистам быстрее принимать решения о
+                закупке или перераспределении материалов между подразделениями.
+              </p>
+            </div>
+            <ProjectCaseImageSlot
+              label="Страница аналогов и сравнения материалов"
+              imageSrc="/SearchMaterial-Main-analogy.png"
+              imageAlt="Страница аналогов и сравнения материалов"
+              imageWidth={1920}
+              imageHeight={1080}
+            />
+
+            <h3 className={styles.subsectionTitle}>Новогодняя статистика</h3>
+            <div className={styles.sectionText}>
+              <p>
+                В конце года в сервисе появляется интерактивный экран с
+                персональными итогами работы пользователя.
+              </p>
+              <p>
+                Формат напоминает «year in review»: пользователь листает
+                карточки со своей статистикой за год — сколько поисковых
+                запросов выполнил, сколько страниц результатов просмотрел, как
+                часто копировал код и наименование материалов, какие функции
+                использовал чаще всего.
+              </p>
+              <p>
+                Помимо числовых метрик в карточках появляются игровые элементы —
+                достижения, «любимый класс» материалов и шуточные
+                характеристики активности.
+              </p>
+              <p>
+                В финале пользователь может перейти к ежегодному опросу и
+                оставить обратную связь о сервисе.
+              </p>
+              <p>
+                Такой формат помогает показать пользователям их вклад в работу
+                системы и добавляет немного эмоций в повседневный рабочий
+                инструмент.
+              </p>
+              <span className={styles.noteText}>
+                Экран ежегодно открывают ~60 пользователей.
+              </span>
+            </div>
+            <div className={styles.carouselWrap}>
+              <YearReviewCarousel />
+            </div>
+          </section>
+
+          <section className={styles.section}>
+            <h2 className={styles.sectionTitle}>Результат</h2>
+            <div className={styles.sectionText}>
+              <ul>
+                <li>
+                  количество пользователей выросло с 4094 до 5385 (+31%)
+                </li>
+                <li>
+                  поисковая активность увеличилась более чем в 2 раза (с 1471 до
+                  3175 запросов в день)
+                </li>
+                <li>
+                  пользователи стали чаще использовать систему в ежедневной
+                  работе
+                </li>
+                <li>
+                  запущен и развит новый сценарий — табличный поиск: его
+                  использование выросло в 12 раз
+                </li>
+              </ul>
+            </div>
+          </section>
         </div>
-      </main>
-    </>
+      </div>
+    </main>
   );
 }
-
-// Список секций можно использовать для построения оглавления в сайдбаре.
-// Сейчас сайдбар отключен, поэтому массив оставлен для будущего развития страницы.
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const sections = [
-  { id: "about", label: "О продукте" },
-  { id: "problem", label: "Проблема" },
-  { id: "goal", label: "Цель" },
-  { id: "role", label: "Моя роль" },
-  { id: "ux-redesign", label: "Редизайн и дизайн-система" },
-  { id: "ux-table-search", label: "Табличный поиск" },
-  { id: "ux-analogs", label: "Поиск аналогов" },
-  { id: "ux-new-year-stats", label: "Новогодняя статистика" },
-  { id: "result", label: "Результат" },
-];

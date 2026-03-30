@@ -88,7 +88,7 @@ export const projects: Project[] = [
     description:
       "Внутренний сервис для работы с нормативно-справочной информацией предприятия",
     period: "2022 - 2025",
-    imageAlt: "Поиск по материалами",
+    imageAlt: "Поиск по материалам",
     hoverImages: {
       main: "/Search-NSI.png",
     },
