@@ -6,7 +6,7 @@
 
 .title {
   margin: 0;
-  color: #efebf4;
+  color: var(--color-text);
   font-size: 36px;
   font-weight: 500;
   line-height: 150%;
@@ -15,7 +15,7 @@
 
 .meta {
   margin: 4px 0 0;
-  color: rgba(239, 235, 244, 0.4);
+  color: rgba(0, 32, 51, 0.4);
   font-size: 14px;
   font-weight: 400;
   line-height: 150%;
@@ -26,7 +26,7 @@
   margin: 20px 0 0;
   width: 670px;
   max-width: 100%;
-  color: #efebf4;
+  color: var(--color-text);
   font-size: 14px;
   font-weight: 400;
   line-height: 150%;

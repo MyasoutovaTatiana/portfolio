@@ -1,5 +1,5 @@
 .main {
-  color: #efebf4;
+  color: var(--color-text);
   padding: 120px 24px;
   min-height: 100vh;
 }

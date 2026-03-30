@@ -1,6 +1,7 @@
 .page {
   min-height: 100vh;
   padding: 120px 0 80px;
+  background: #fff;
 }
 
 .layout {
@@ -30,15 +31,15 @@
 }
 
 .breadcrumbMuted {
-  color: rgba(239, 235, 244, 0.6);
+  color: rgba(0, 32, 51, 0.6);
 }
 
 .breadcrumbCurrent {
-  color: #efebf4;
+  color: var(--color-text);
 }
 
 .breadcrumbSeparator {
-  color: rgba(239, 235, 244, 0.6);
+  color: rgba(0, 32, 51, 0.6);
 }
 
 .hero {
@@ -47,7 +48,7 @@
 
 .title {
   margin: 0 0 4px;
-  color: #efebf4;
+  color: var(--color-text);
   font-size: 36px;
   font-weight: 500;
   line-height: 150%;
@@ -55,7 +56,7 @@
 
 .period {
   margin: 0;
-  color: rgba(239, 235, 244, 0.6);
+  color: rgba(0, 32, 51, 0.6);
   font-size: 14px;
   font-weight: 300;
   line-height: 150%;
@@ -67,7 +68,7 @@
 
 .sectionTitle {
   margin: 48px 0 8px;
-  color: #efebf4;
+  color: var(--color-text);
   font-size: 24px;
   font-weight: 500;
   line-height: 150%;
@@ -79,14 +80,14 @@
 
 .subsectionTitle {
   margin: 28px 0 8px;
-  color: #efebf4;
+  color: var(--color-text);
   font-size: 18px;
   font-weight: 500;
   line-height: 150%;
 }
 
 .sectionText {
-  color: #efebf4;
+  color: var(--color-text);
   font-size: 16px;
   font-weight: 300;
   line-height: 150%;
@@ -114,48 +115,54 @@
 }
 
 .imageBlock {
-  margin: 8px auto 20px;
+  margin: 8px 0 20px;
+  width: 100%;
   max-width: 672px;
-  border-radius: 12px;
+  border-radius: 6px;
   overflow: hidden;
 }
 
 .imageLabel {
-  margin: 20px auto 0;
+  margin: 20px 0 0;
+  width: 100%;
   max-width: 672px;
-  color: rgba(239, 235, 244, 0.6);
+  color: rgba(0, 32, 51, 0.6);
   font-size: 14px;
   font-weight: 300;
   line-height: 150%;
+  text-align: left;
 }
 
 .section:first-of-type .imageLabel {
   margin-top: 16px;
-  margin-left: 0;
-  margin-right: 0;
   max-width: none;
 }
 
 .overviewImageWrap {
   margin-top: 8px;
-  margin-left: 60px;
-  display: inline-block;
-  max-width: calc(100% - 60px);
-  border-radius: 6px;
-  border: 1px solid rgba(0, 65, 102, 0.2);
-  box-shadow:
-    0 4px 4px rgba(0, 32, 51, 0.04),
-    0 8px 24px rgba(0, 32, 51, 0.12);
+  margin-left: 0;
+  display: block;
+  width: 100%;
+  max-width: 672px;
+  height: auto;
+  border-radius: 20px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border: none;
+  box-shadow: none;
   overflow: hidden;
   line-height: 0;
 }
 
-.overviewImage {
+.projectImage {
   display: block;
-  height: 500px;
-  width: auto;
+  height: auto;
+  width: 100%;
   max-width: 100%;
   object-fit: contain;
+  border-radius: 20px;
 }
 
 .imagePlaceholder {
@@ -168,19 +175,29 @@
   gap: 8px;
   padding: 32px 24px;
   text-align: center;
-  background: rgba(33, 15, 73, 0.5);
-  border: 1px dashed rgba(167, 147, 247, 0.35);
+  background: rgba(0, 32, 51, 0.04);
+  border: 1px dashed rgba(0, 120, 210, 0.25);
   border-radius: 12px;
-  color: rgba(239, 235, 244, 0.55);
+  color: rgba(0, 32, 51, 0.6);
   font-size: 14px;
   font-weight: 300;
   line-height: 150%;
 }
 
+.imagePlaceholderWithImage {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border: none;
+  border-radius: 6px;
+  overflow: hidden;
+  line-height: 0;
+}
+
 .imagePlaceholder kbd {
   font-family: inherit;
   font-size: 12px;
-  color: rgba(167, 147, 247, 0.85);
+  color: var(--color-primary);
 }
 
 @media (max-width: 1024px) {
@@ -245,14 +262,19 @@
     padding: 24px 16px;
   }
 
+  .imagePlaceholderWithImage {
+    min-height: 0;
+  }
+
   .overviewImageWrap {
     margin-left: 0;
     max-width: 100%;
+    height: auto;
   }
 
-  .overviewImage {
-    height: auto;
-    max-height: 500px;
+  .projectImage {
     width: 100%;
+    height: auto;
+    max-height: none;
   }
 }

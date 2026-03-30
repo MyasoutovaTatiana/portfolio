@@ -34,8 +34,8 @@
   height: 32px;
   border-radius: 999px;
   border: none;
-  background: rgba(0, 0, 0, 0.4);
-  color: #efebf4;
+  background: rgba(255, 255, 255, 0.85);
+  color: var(--color-text);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -62,17 +62,17 @@
   width: 16px;
   height: 2px;
   border-radius: 999px;
-  background: rgba(239, 235, 244, 0.25);
+  background: rgba(0, 32, 51, 0.25);
 }
 
 .dotActive {
-  background: rgba(239, 235, 244, 0.85);
+  background: rgba(0, 32, 51, 0.85);
 }
 
 .overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.85);
+  background: rgba(255, 255, 255, 0.95);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -112,8 +112,8 @@
   height: 40px;
   border-radius: 999px;
   border: none;
-  background: rgba(0, 0, 0, 0.4);
-  color: #efebf4;
+  background: rgba(255, 255, 255, 0.85);
+  color: var(--color-text);
   display: flex;
   align-items: center;
   justify-content: center;

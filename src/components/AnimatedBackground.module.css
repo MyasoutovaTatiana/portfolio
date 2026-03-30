@@ -1,7 +1,7 @@
 .background {
   position: fixed;
   inset: 0;
-  background: #160416;
+  background: var(--color-bg);
   overflow: hidden;
   z-index: -1;
   pointer-events: none;
@@ -13,9 +13,9 @@
   width: 720px;
   height: 720px;
   border-radius: 9999px;
-  background: #430eb5;
+  background: var(--color-spheres);
   filter: blur(394px);
-  opacity: 0.9;
+  opacity: 0.12;
   will-change: transform;
 }
 

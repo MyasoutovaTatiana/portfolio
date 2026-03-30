@@ -5,12 +5,21 @@
   --bp-lg: 1024px;
   --bp-xl: 1200px;
   --bp-2xl: 1440px;
+  /* Overall site background tint (shown behind content). */
+  --color-bg: rgba(139, 69, 237, 0.12);
+  --color-text: #002033;
+  /* Orb color used by AnimatedBackground */
+  --color-spheres: #8B45ED;
+  --color-primary: #0078D2;
 }
 
 html,
 body {
   margin: 0;
   padding: 0;
+  /* Keep document background transparent so the AnimatedBackground layer is visible. */
+  background: transparent;
+  color: var(--color-text);
 }
 
 body {
@@ -28,8 +37,8 @@ html {
   left: -999px;
   top: 0;
   padding: 8px 16px;
-  background: #210f49;
-  color: #efebf4;
+  background: var(--color-spheres);
+  color: var(--color-text);
   border-radius: 8px;
   z-index: 200;
 }

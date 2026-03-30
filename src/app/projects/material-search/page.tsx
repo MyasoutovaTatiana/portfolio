@@ -189,7 +189,7 @@ export default function MaterialSearchPage() {
               <div className={styles.imageLabel}>после</div>
               <div className={styles.imageBlock}>
                 <ImageLightbox
-                  src="/SearchMaterial-Main.png"
+                  src="/Search-NSI.png"
                   alt="обновленный интерфейс поиска по материалам после редизайна"
                 />
               </div>

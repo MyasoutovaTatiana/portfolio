@@ -58,8 +58,7 @@ export default function ProjectCard({
             src={mainImage}
             alt={imageAlt}
             className={`${styles.image} ${styles.mainImage}`}
-            width={1440}
-            height={900}
+            fill
             sizes={`(max-width: ${BP_MD}px) 100vw, (max-width: ${BP_XL}px) 80vw, 720px`}
           />
 

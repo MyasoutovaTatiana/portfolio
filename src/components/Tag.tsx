@@ -13,7 +13,7 @@ type Props = {
 export default function Tag({
   label,
   variant = "work",
-  tone = "dark",
+  tone = "light",
 }: Props) {
   const toneClass = tone === "light" ? styles.toneLight : undefined;
   return (

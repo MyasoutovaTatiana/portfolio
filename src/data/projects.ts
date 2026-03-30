@@ -28,7 +28,7 @@ export const projects: Project[] = [
       "Единая точка управления продуктами команды корпоративного поиска",
     period: "июль — сентябрь 2025",
     imageAlt: "Сервис администрирования",
-    imageSrc: "/the-administration-system.jpg",
+    imageSrc: "/the-administration-system.png",
     tags: [
       { label: "GPN", variant: "work" },
       { label: "WEB", variant: "device" },
@@ -43,9 +43,7 @@ export const projects: Project[] = [
     period: "2025 - наст. вр",
     imageAlt: "Сервис ДД",
     hoverImages: {
-      main: "/ServiceDD-Main.png",
-      left: "/ServiceDD-Left.png",
-      right: "/ServiceDD-Right.png",
+      main: "/service-doc.png",
     },
     tags: [
       { label: "GPN", variant: "work" },
@@ -61,9 +59,7 @@ export const projects: Project[] = [
     imageAlt: "Consta",
     inDevelopment: true,
     hoverImages: {
-      main: "/DesignSystem-Main.png",
-      left: "/DesignSystem-Left.png",
-      right: "/DesignSystem-Right.png",
+      main: "/Consta.png",
     },
     tags: [
       { label: "GPN", variant: "work" },
@@ -78,7 +74,7 @@ export const projects: Project[] = [
       "Телеграм бот для инвестиций в криптовалюты и заработка с рефрельной программы",
     period: "2026",
     imageAlt: "profit architect",
-    imageSrc: "/profit-architect.png",
+    imageSrc: "/Arc.png",
     inDevelopment: true,
     tags: [
       { label: "FREELANCE", variant: "work" },
@@ -94,9 +90,7 @@ export const projects: Project[] = [
     period: "2022 - 2025",
     imageAlt: "Поиск по материалами",
     hoverImages: {
-      main: "/SearchMaterial-Main.png",
-      left: "/SearchMaterial-Left.png",
-      right: "/SearchMaterial-Right.png",
+      main: "/Search-NSI.png",
     },
     tags: [
       { label: "GPN", variant: "work" },
@@ -112,9 +106,7 @@ export const projects: Project[] = [
     period: "2022 - 2024",
     imageAlt: "Единое поисковое окно компании",
     hoverImages: {
-      main: "/CorpSearch-Main.png",
-      left: "/CorpSearch-Left.png",
-      right: "/CorpSearch-Right.png",
+      main: "/Korp-Search.png",
     },
     tags: [
       { label: "GPN", variant: "work" },

@@ -22,7 +22,7 @@
 
 .value {
   margin: 0;
-  color: #efebf4;
+  color: var(--color-text);
   font-size: 24px;
   font-weight: 600;
   line-height: 150%;
@@ -31,7 +31,7 @@
 
 .label {
   margin: 0;
-  color: rgba(239, 235, 244, 0.6);
+  color: rgba(0, 32, 51, 0.6);
   font-size: 12px;
   font-weight: 400;
   line-height: 150%;

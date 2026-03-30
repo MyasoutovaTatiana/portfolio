@@ -1,16 +1,48 @@
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./page.module.css";
-import AnimatedBackground from "../../../components/AnimatedBackground";
 
-function ImageSlot({ label, hint }: { label: string; hint?: string }) {
+function ImageSlot({
+  label,
+  hint,
+  imageSrc,
+  imageAlt,
+  imageWidth,
+  imageHeight,
+  hideLabel,
+}: {
+  label: string;
+  hint?: string;
+  imageSrc?: string;
+  imageAlt?: string;
+  imageWidth?: number;
+  imageHeight?: number;
+  hideLabel?: boolean;
+}) {
   return (
     <>
-      <div className={styles.imageLabel}>{label}</div>
+      {hideLabel ? null : <div className={styles.imageLabel}>{label}</div>}
       <div className={styles.imageBlock}>
-        <div className={styles.imagePlaceholder}>
-          <span>Место для скриншота</span>
-          {hint ? <kbd>{hint}</kbd> : null}
+        <div
+          className={
+            imageSrc ? styles.imagePlaceholderWithImage : styles.imagePlaceholder
+          }
+        >
+          {imageSrc ? (
+            <Image
+              src={imageSrc}
+              alt={imageAlt ?? label}
+              width={imageWidth ?? 2680}
+              height={imageHeight ?? 1680}
+              sizes="(max-width: 768px) calc(100vw - 32px), 672px"
+              className={styles.projectImage}
+            />
+          ) : (
+            <>
+              <span>Место для скриншота</span>
+              {hint ? <kbd>{hint}</kbd> : null}
+            </>
+          )}
         </div>
       </div>
     </>
@@ -20,7 +52,6 @@ function ImageSlot({ label, hint }: { label: string; hint?: string }) {
 export default function AdminServicePage() {
   return (
     <>
-      <AnimatedBackground />
       <main id="main-content" className={styles.page}>
         <div className={styles.layout}>
           <div className={styles.content}>
@@ -57,12 +88,12 @@ export default function AdminServicePage() {
               <div className={styles.imageLabel}>Общий вид сервиса администрирования</div>
               <div className={styles.overviewImageWrap}>
                 <Image
-                  src="/admin-service-overview.png"
+                  src="/the-administration-system.png"
                   alt="Система администрирования: сетка сервисов и статусы узлов"
                   width={1024}
                   height={576}
                   sizes="(max-width: 1024px) calc(100vw - 108px), 889px"
-                  className={styles.overviewImage}
+                  className={styles.projectImage}
                   priority
                 />
               </div>
@@ -89,10 +120,6 @@ export default function AdminServicePage() {
                   <li>нет единого подхода к управлению</li>
                 </ul>
               </div>
-              <ImageSlot
-                label="Разрозненные админки до объединения"
-                hint="public/admin-service-before.png"
-              />
             </section>
 
             <section className={styles.section}>
@@ -136,10 +163,6 @@ export default function AdminServicePage() {
                   между системами и необходимость каждый раз переучиваться.
                 </p>
               </div>
-              <ImageSlot
-                label="Артефакты интервью и карта болей"
-                hint="public/admin-service-research.png"
-              />
 
               <h3 className={styles.subsectionTitle}>Гипотеза</h3>
               <div className={styles.sectionText}>
@@ -167,8 +190,8 @@ export default function AdminServicePage() {
                 </p>
               </div>
               <ImageSlot
-                label="Ключевые пользовательские сценарии"
-                hint="public/admin-service-flows.png"
+                label="Результаты интервью с аналитиками"
+                imageSrc="/info.jpg"
               />
 
               <h3 className={styles.subsectionTitle}>
@@ -181,10 +204,6 @@ export default function AdminServicePage() {
                 </p>
                 <p>Исправила неочевидные переходы и перегруженные места.</p>
               </div>
-              <ImageSlot
-                label="Прототипы и тестовые сценарии"
-                hint="public/admin-service-prototype.png"
-              />
             </section>
 
             <section className={styles.section}>
@@ -219,54 +238,38 @@ export default function AdminServicePage() {
               </div>
               <ImageSlot
                 label="Единый интерфейс и навигация по сущностям"
-                hint="public/admin-service-solution.png"
+                imageSrc="/design.jpg"
+                imageAlt="Единый интерфейс и навигация по сущностям"
+                imageWidth={2680}
+                imageHeight={1680}
               />
             </section>
 
             <section className={styles.section}>
               <h2 className={styles.sectionTitle}>Результат</h2>
               <div className={styles.sectionText}>
-                <p>После внедрения:</p>
-                <ul>
-                  <li>
-                    сократилось время на выполнение административных задач
-                    (~20–30%)
-                  </li>
-                  <li>снизилось количество ошибок при настройке прав</li>
-                  <li>упростилось подключение новых сервисов в общую систему</li>
-                  <li>
-                    пользователи быстрее ориентируются в интерфейсе без обучения
-                  </li>
-                </ul>
                 <p>
-                  Сервис стал базой для дальнейшего роста экосистемы
-                  корпоративного поиска.
+                  Сервис внедрён и проходит тестирование на аналитиках команды
+                  корпоративного поиска. Уже на этом этапе получена положительная
+                  обратная связь.
                 </p>
-              </div>
-              <ImageSlot
-                label="Итоговые метрики после внедрения"
-                hint="public/admin-service-results.png"
-              />
-            </section>
-
-            <section className={styles.section}>
-              <h2 className={styles.sectionTitle}>Ограничения</h2>
-              <div className={styles.sectionText}>
                 <p>
-                  Проект делался в сжатые сроки: 2 недели на дизайн и около
-                  месяца на разработку.
+                  Сократилось время на выполнение типовых административных задач
+                  за счёт унификации сценариев и снижения количества переключений
+                  между системами.
                 </p>
-                <p>При этом:</p>
-                <ul>
-                  <li>нужно было учесть легаси разных сервисов</li>
-                  <li>не было единой дизайн-системы для админок</li>
-                  <li>
-                    важно было быстро согласовать решение со всеми участниками
-                  </li>
-                </ul>
                 <p>
-                  Это требовало принимать решения с фокусом на простоту и
-                  масштабируемость, а не идеальность.
+                  Снизилось количество ошибок при настройке прав — благодаря
+                  более предсказуемой структуре и единым паттернам взаимодействия.
+                </p>
+                <p>
+                  Пользователям стало проще ориентироваться в интерфейсе: новые
+                  сценарии не требуют отдельного обучения, так как логика
+                  действий повторяется между сервисами.
+                </p>
+                <p>
+                  Подключение новых продуктов в систему упростилось — появился
+                  единый подход к администрированию, который можно масштабировать.
                 </p>
               </div>
             </section>
