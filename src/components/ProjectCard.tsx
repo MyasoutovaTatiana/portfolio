@@ -16,6 +16,7 @@ type HoverImages = {
 };
 
 type Props = {
+  projectSlug?: string;
   title: string;
   description: string;
   period: string;
@@ -29,6 +30,7 @@ type Props = {
 };
 
 export default function ProjectCard({
+  projectSlug,
   title,
   description,
   period,
@@ -40,6 +42,7 @@ export default function ProjectCard({
   inDevelopment = false,
 }: Props) {
   const mainImage = hoverImages?.main ?? imageSrc ?? "";
+  const analyticsProjectSlug = projectSlug ?? href.replace("/projects/", "");
   const cardContent = (
     <>
       <div className={styles.imageWrap}>
@@ -105,7 +108,15 @@ export default function ProjectCard({
 
   if (inDevelopment) {
     return (
-      <div className={styles.cardLink} data-wip>
+      <div
+        className={styles.cardLink}
+        data-wip
+        data-analytics-hover-event="hover_project_card"
+        data-analytics-project-slug={analyticsProjectSlug}
+        data-analytics-param-project-title={title}
+        data-analytics-param-project-status="in_development"
+        data-analytics-param-card-variant="v1"
+      >
         <article className={`${styles.card} ${styles.cardWip}`}>
           {cardContent}
         </article>
@@ -114,7 +125,17 @@ export default function ProjectCard({
   }
 
   return (
-    <Link href={href} className={styles.cardLink}>
+    <Link
+      href={href}
+      className={styles.cardLink}
+      data-analytics-event="click_project_card"
+      data-analytics-hover-event="hover_project_card"
+      data-analytics-href={href}
+      data-analytics-project-slug={analyticsProjectSlug}
+      data-analytics-param-project-title={title}
+      data-analytics-param-project-status="published"
+      data-analytics-param-card-variant="v1"
+    >
       <article className={styles.card}>
         {cardContent}
       </article>

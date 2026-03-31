@@ -13,6 +13,7 @@ export default function V2ProjectsSection() {
         {projects.map((project) => (
           <ProjectCard
             key={project.slug}
+            projectSlug={project.slug}
             href={project.href}
             title={project.title}
             description={project.description}

@@ -109,6 +109,11 @@ function ProjectCell({ slug }: { slug: Slug }) {
       <article
         className={`${styles.card} ${styles.cardWip}`}
         aria-label={title}
+        data-analytics-hover-event="hover_project_card"
+        data-analytics-project-slug={slug}
+        data-analytics-param-project-title={title}
+        data-analytics-param-project-status="in_development"
+        data-analytics-param-card-variant="v2_grid"
       >
         {inner}
       </article>
@@ -116,7 +121,17 @@ function ProjectCell({ slug }: { slug: Slug }) {
   }
 
   return (
-    <Link href={p.href} className={styles.card}>
+    <Link
+      href={p.href}
+      className={styles.card}
+      data-analytics-event="click_project_card"
+      data-analytics-hover-event="hover_project_card"
+      data-analytics-project-slug={slug}
+      data-analytics-href={p.href}
+      data-analytics-param-project-title={title}
+      data-analytics-param-project-status="published"
+      data-analytics-param-card-variant="v2_grid"
+    >
       {inner}
     </Link>
   );
