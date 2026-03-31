@@ -14,11 +14,13 @@ export default function ServiceDDPage() {
             <span className={styles.breadcrumbSeparator} aria-hidden="true">
               ›
             </span>
-            <span className={styles.breadcrumbCurrent}>Сервис ДД</span>
+            <span className={styles.breadcrumbCurrent}>
+              Сервис анализа договорных документов
+            </span>
           </nav>
 
           <header className={styles.hero}>
-            <h1 className={styles.title}>Сервис ДД</h1>
+            <h1 className={styles.title}>Сервис анализа договорных документов</h1>
             <p className={styles.period}>B2E продукт · 2025 — настоящее время</p>
           </header>
 

@@ -19,13 +19,11 @@ export default function MaterialSearchPage() {
             <span className={styles.breadcrumbSeparator} aria-hidden="true">
               ›
             </span>
-            <span className={styles.breadcrumbCurrent}>
-              Поиск по материалам
-            </span>
+            <span className={styles.breadcrumbCurrent}>Поиск по НСИ</span>
           </nav>
 
           <header className={styles.hero}>
-            <h1 className={styles.title}>Поиск по материалам</h1>
+            <h1 className={styles.title}>Поиск по НСИ</h1>
             <p className={styles.period}>B2E продукт · 2022 — 2025</p>
           </header>
 
@@ -229,7 +227,7 @@ export default function MaterialSearchPage() {
             <ProjectCaseImageSlot
               label="Табличный поиск — до"
               hideLabel
-              imageSrc="/SearchMaterial-Main-DO-TS.png"
+              imageSrc="/old-tabl.jpg"
               imageAlt="Старый интерфейс табличного поиска материалов"
               imageWidth={1920}
               imageHeight={1080}
@@ -238,7 +236,7 @@ export default function MaterialSearchPage() {
             <ProjectCaseImageSlot
               label="Табличный поиск — после"
               hideLabel
-              imageSrc="/SearchMaterial-Main-TS.png"
+              imageSrc="/new-tabl.jpg"
               imageAlt="Обновлённый интерфейс табличного поиска материалов"
               imageWidth={1920}
               imageHeight={1080}
@@ -264,7 +262,7 @@ export default function MaterialSearchPage() {
             </div>
             <ProjectCaseImageSlot
               label="Страница аналогов и сравнения материалов"
-              imageSrc="/SearchMaterial-Main-analogy.png"
+              imageSrc="/analogy.jpg"
               imageAlt="Страница аналогов и сравнения материалов"
               imageWidth={1920}
               imageHeight={1080}
@@ -297,9 +295,6 @@ export default function MaterialSearchPage() {
                 системы и добавляет немного эмоций в повседневный рабочий
                 инструмент.
               </p>
-              <span className={styles.noteText}>
-                Экран ежегодно открывают ~60 пользователей.
-              </span>
             </div>
             <div className={styles.carouselWrap}>
               <YearReviewCarousel />

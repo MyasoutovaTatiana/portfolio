@@ -16,13 +16,11 @@ export default function CorpSearchPage() {
             <span className={styles.breadcrumbSeparator} aria-hidden="true">
               ›
             </span>
-            <span className={styles.breadcrumbCurrent}>
-              Единое поисковое окно компании
-            </span>
+            <span className={styles.breadcrumbCurrent}>Корпоративный поиск</span>
           </nav>
 
           <header className={styles.hero}>
-            <h1 className={styles.title}>Единое поисковое окно компании</h1>
+            <h1 className={styles.title}>Корпоративный поиск</h1>
             <p className={styles.period}>B2E продукт · 2022 — 2025</p>
           </header>
 
@@ -30,8 +28,8 @@ export default function CorpSearchPage() {
             <h2 className={styles.sectionTitle}>О проекте</h2>
             <div className={styles.sectionText}>
               <p>
-                Единое поисковое окно компании «Газпром нефть» позволяет
-                сотрудникам находить информацию во внутренних системах.
+                Корпоративный поиск «Газпром нефть» позволяет сотрудникам
+                находить информацию во внутренних системах.
               </p>
               <p>Система объединяет несколько типов данных:</p>
               <p>

@@ -37,11 +37,11 @@ export const projects: Project[] = [
   {
     slug: "service-dd",
     href: "/projects/ServiceDD",
-    title: "Сервис ДД",
+    title: "Сервис анализа договорных документов",
     description:
       "Внутренний сервис для юристов и финансистов, который позволяет анализировать и сопоставлять договорные документы с правилами заполнения",
     period: "2025 - наст. вр",
-    imageAlt: "Сервис ДД",
+    imageAlt: "Сервис анализа договорных документов",
     hoverImages: {
       main: "/service-doc.png",
     },
@@ -84,11 +84,11 @@ export const projects: Project[] = [
   {
     slug: "material-search",
     href: "/projects/material-search",
-    title: "Поиск по материалам",
+    title: "Поиск по НСИ",
     description:
       "Внутренний сервис для работы с нормативно-справочной информацией предприятия",
     period: "2022 - 2025",
-    imageAlt: "Поиск по материалам",
+    imageAlt: "Поиск по НСИ",
     hoverImages: {
       main: "/Search-NSI.png",
     },
@@ -100,11 +100,11 @@ export const projects: Project[] = [
   {
     slug: "corp-search",
     href: "/projects/corp-search",
-    title: "Единое поисковое окно компании",
+    title: "Корпоративный поиск",
     description:
       "Внутренний сервис для всех сотрудников компании, который позволяет выполнять поиск по внутренним информационным ресурсам «Газпром нефти»",
     period: "2022 - 2024",
-    imageAlt: "Единое поисковое окно компании",
+    imageAlt: "Корпоративный поиск",
     hoverImages: {
       main: "/Korp-Search.png",
     },
