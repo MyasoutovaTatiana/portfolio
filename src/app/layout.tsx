@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import { GoogleAnalytics } from "@next/third-parties/google";
 import Script from "next/script";
 import AnalyticsEvents from "@/components/AnalyticsEvents";
 import "./globals.css";
@@ -35,8 +34,17 @@ export default function RootLayout({
     y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 })(window, document, "clarity", "script", "w4f55k3pvn");`}
         </Script>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-4KTBMEMEBJ"
+          strategy="afterInteractive"
+        />
+        <Script id="ga-init" strategy="afterInteractive">
+          {`window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-4KTBMEMEBJ');`}
+        </Script>
         <AnalyticsEvents />
-        <GoogleAnalytics gaId="G-4KTBMEMEBJ" />
       </body>
     </html>
   );
